@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,15 @@
 		6D441F82265ABD2500A2391C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F81265ABD2500A2391C /* Color.swift */; };
 		6D441F85265AC7D700A2391C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F84265AC7D700A2391C /* UIFont.swift */; };
 		6D441F88265AC82400A2391C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F87265AC82400A2391C /* UIViewController.swift */; };
+		6D441F93265BDF7B00A2391C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F92265BDF7B00A2391C /* BaseViewController.swift */; };
+		6D441F9C265BE08600A2391C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F9B265BE08600A2391C /* Login.storyboard */; };
+		6D441F9F265BE0B400A2391C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F9E265BE0B400A2391C /* LoginViewController.swift */; };
+		6D441FA5265BE44600A2391C /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441FA4265BE44600A2391C /* IndicatorView.swift */; };
+		6D441FAA265BE6E200A2391C /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */; };
+		6D441FAB265BE6E200A2391C /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */; };
+		6D441FB0265C114600A2391C /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */; };
 		6DC6CB9C26518A9300E0BF29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6CB9B26518A9300E0BF29 /* AppDelegate.swift */; };
 		6DC6CB9E26518A9300E0BF29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6CB9D26518A9300E0BF29 /* SceneDelegate.swift */; };
-		6DC6CBA026518A9300E0BF29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6CB9F26518A9300E0BF29 /* ViewController.swift */; };
 		6DC6CBA326518A9300E0BF29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC6CBA126518A9300E0BF29 /* Main.storyboard */; };
 		6DC6CBA526518A9700E0BF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DC6CBA426518A9700E0BF29 /* Assets.xcassets */; };
 		6DC6CBA826518A9700E0BF29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC6CBA626518A9700E0BF29 /* LaunchScreen.storyboard */; };
@@ -30,10 +36,16 @@
 		6D441F81265ABD2500A2391C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6D441F84265AC7D700A2391C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		6D441F87265AC82400A2391C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6D441F92265BDF7B00A2391C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6D441F9B265BE08600A2391C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6D441F9E265BE0B400A2391C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6D441FA4265BE44600A2391C /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		6DC6CB9826518A9300E0BF29 /* geD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC6CB9B26518A9300E0BF29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DC6CB9D26518A9300E0BF29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DC6CB9F26518A9300E0BF29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6DC6CBA226518A9300E0BF29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DC6CBA426518A9700E0BF29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DC6CBA726518A9700E0BF29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +78,6 @@
 				40C989CDD78A6C575E2F7D60 /* Pods-geD.debug.xcconfig */,
 				3457DDBDF7E98784F6E66767 /* Pods-geD.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,6 +88,8 @@
 				6D441F7A265ABC8300A2391C /* Secret */,
 				6D441F7B265ABC9900A2391C /* Font */,
 				6D441F7C265ABCC900A2391C /* Extension */,
+				6D441FA3265BE42D00A2391C /* CommonClass */,
+				6D441F91265BDF6300A2391C /* Base */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -91,6 +104,9 @@
 		6D441F7B265ABC9900A2391C /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */,
+				6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */,
+				6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -104,6 +120,40 @@
 				6D441F87265AC82400A2391C /* UIViewController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6D441F90265BDF2B00A2391C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6DC6CBA126518A9300E0BF29 /* Main.storyboard */,
+				6D441F9A265BE06B00A2391C /* Login */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6D441F91265BDF6300A2391C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6D441F92265BDF7B00A2391C /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		6D441F9A265BE06B00A2391C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6D441F9B265BE08600A2391C /* Login.storyboard */,
+				6D441F9E265BE0B400A2391C /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6D441FA3265BE42D00A2391C /* CommonClass */ = {
+			isa = PBXGroup;
+			children = (
+				6D441FA4265BE44600A2391C /* IndicatorView.swift */,
+			);
+			path = CommonClass;
 			sourceTree = "<group>";
 		};
 		6DC6CB8F26518A9200E0BF29 = {
@@ -130,8 +180,7 @@
 				6D441F75265ABC5C00A2391C /* Configuration */,
 				6DC6CB9B26518A9300E0BF29 /* AppDelegate.swift */,
 				6DC6CB9D26518A9300E0BF29 /* SceneDelegate.swift */,
-				6DC6CB9F26518A9300E0BF29 /* ViewController.swift */,
-				6DC6CBA126518A9300E0BF29 /* Main.storyboard */,
+				6D441F90265BDF2B00A2391C /* Sources */,
 				6DC6CBA426518A9700E0BF29 /* Assets.xcassets */,
 				6DC6CBA626518A9700E0BF29 /* LaunchScreen.storyboard */,
 				6DC6CBA926518A9700E0BF29 /* Info.plist */,
@@ -198,7 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D441FAA265BE6E200A2391C /* GmarketSansBold.otf in Resources */,
+				6D441F9C265BE08600A2391C /* Login.storyboard in Resources */,
 				6DC6CBA826518A9700E0BF29 /* LaunchScreen.storyboard in Resources */,
+				6D441FAB265BE6E200A2391C /* GmarketSansMedium.otf in Resources */,
+				6D441FB0265C114600A2391C /* NotoSansCJKkr-Bold.otf in Resources */,
 				6DC6CBA526518A9700E0BF29 /* Assets.xcassets in Resources */,
 				6DC6CBA326518A9300E0BF29 /* Main.storyboard in Resources */,
 			);
@@ -253,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC6CBA026518A9300E0BF29 /* ViewController.swift in Sources */,
 				6D441F7E265ABD1300A2391C /* UINavgationBar.swift in Sources */,
 				6DC6CB9C26518A9300E0BF29 /* AppDelegate.swift in Sources */,
 				6D441F85265AC7D700A2391C /* UIFont.swift in Sources */,
+				6D441F9F265BE0B400A2391C /* LoginViewController.swift in Sources */,
+				6D441FA5265BE44600A2391C /* IndicatorView.swift in Sources */,
 				6DC6CB9E26518A9300E0BF29 /* SceneDelegate.swift in Sources */,
+				6D441F93265BDF7B00A2391C /* BaseViewController.swift in Sources */,
 				6D441F77265ABC7300A2391C /* Constant.swift in Sources */,
 				6D441F88265AC82400A2391C /* UIViewController.swift in Sources */,
 				6D441F82265ABD2500A2391C /* Color.swift in Sources */,
