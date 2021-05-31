@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GmarketSansBold.otf">
-            <string>GmarketSansBold</string>
-        </array>
         <array key="NotoSansCJKkr-Bold.otf">
             <string>NotoSansCJKkr-Bold</string>
         </array>
@@ -20,26 +17,14 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="Ti7-Gm-ZzA" customClass="LoginViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBO-xm-wBB">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ge:D" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6B-2d-HWh">
-                                <rect key="frame" x="126.33333333333333" y="337" width="139.33333333333337" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="aKw-x7-VGK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="54"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT직군을 위한 공간, 게디" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-sV-Iuk">
-                                <rect key="frame" x="137.33333333333334" y="425" width="117.33333333333334" height="14.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                <color key="textColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djf-Ej-Sms">
-                                <rect key="frame" x="36" y="664.33333333333337" width="319" height="42"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSplash" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-uV-pUR">
+                                <rect key="frame" x="-1" y="-1" width="377" height="814"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djf-Ej-Sms">
+                                <rect key="frame" x="36" y="656.33333333333337" width="304" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="seb-4X-ItJ"/>
                                 </constraints>
@@ -49,7 +34,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-Vo-WEx">
-                                <rect key="frame" x="65" y="735.33333333333337" width="259" height="26.666666666666629"/>
+                                <rect key="frame" x="65" y="726.33333333333337" width="244" height="26.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="시작하기를 누르면 ">
                                         <attributes>
@@ -97,28 +82,26 @@
                         <viewLayoutGuide key="safeArea" id="6so-dr-A3i"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="x4e-sV-Iuk" firstAttribute="centerX" secondItem="eBO-xm-wBB" secondAttribute="centerX" constant="1" id="3L9-J4-Q1h"/>
-                            <constraint firstItem="aKx-Vo-WEx" firstAttribute="top" secondItem="Djf-Ej-Sms" secondAttribute="bottom" constant="29" id="84g-pZ-vzs"/>
+                            <constraint firstItem="aKx-Vo-WEx" firstAttribute="top" secondItem="Djf-Ej-Sms" secondAttribute="bottom" constant="28" id="1qN-KI-0Ag"/>
                             <constraint firstItem="6so-dr-A3i" firstAttribute="trailing" secondItem="Djf-Ej-Sms" secondAttribute="trailing" constant="35" id="8hy-AX-3qY"/>
-                            <constraint firstItem="k6B-2d-HWh" firstAttribute="top" secondItem="6so-dr-A3i" secondAttribute="top" constant="293" id="Kb9-xf-9ag"/>
+                            <constraint firstItem="Nav-uV-pUR" firstAttribute="trailing" secondItem="6so-dr-A3i" secondAttribute="trailing" constant="1" id="9r8-tz-wQR"/>
+                            <constraint firstItem="Nav-uV-pUR" firstAttribute="top" secondItem="eBO-xm-wBB" secondAttribute="top" constant="-1" id="Am0-DR-2TS"/>
+                            <constraint firstItem="Nav-uV-pUR" firstAttribute="leading" secondItem="6so-dr-A3i" secondAttribute="leading" constant="-1" id="HH7-3I-Xce"/>
                             <constraint firstItem="aKx-Vo-WEx" firstAttribute="leading" secondItem="6so-dr-A3i" secondAttribute="leading" constant="65" id="OSh-fq-yZH"/>
-                            <constraint firstItem="x4e-sV-Iuk" firstAttribute="top" secondItem="k6B-2d-HWh" secondAttribute="bottom" constant="18" id="S7B-0G-jo2"/>
-                            <constraint firstItem="Djf-Ej-Sms" firstAttribute="top" secondItem="x4e-sV-Iuk" secondAttribute="bottom" constant="225" id="dug-RH-kzW"/>
+                            <constraint firstAttribute="bottom" secondItem="aKx-Vo-WEx" secondAttribute="bottom" constant="59" id="egq-Yw-VhD"/>
                             <constraint firstAttribute="trailing" secondItem="aKx-Vo-WEx" secondAttribute="trailing" constant="66" id="exk-YT-8z5"/>
-                            <constraint firstItem="k6B-2d-HWh" firstAttribute="centerX" secondItem="eBO-xm-wBB" secondAttribute="centerX" constant="1" id="fvt-s0-kx0"/>
+                            <constraint firstAttribute="bottom" secondItem="Nav-uV-pUR" secondAttribute="bottom" constant="-1" id="lCZ-we-qFv"/>
                             <constraint firstItem="Djf-Ej-Sms" firstAttribute="leading" secondItem="6so-dr-A3i" secondAttribute="leading" constant="36" id="tw2-aX-dbN"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mainLabel" destination="k6B-2d-HWh" id="rLS-fu-sss"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igx-xg-jIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-345" y="73"/>
+            <point key="canvasLocation" x="-346.15384615384613" y="72.511848341232223"/>
         </scene>
     </scenes>
     <resources>
         <image name="126" width="304" height="42"/>
+        <image name="imgSplash" width="375" height="812"/>
     </resources>
 </document>
