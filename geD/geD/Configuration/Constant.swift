@@ -9,4 +9,6 @@ import Alamofire
 
 struct Constant {
     static let loginViewControllerIdentifier = "LoginViewController"
+    static let mainTabBarControllerIdentifier = "MainTabBarController"
+    
 }
