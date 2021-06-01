@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func goToLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let rootVC = storyboard.instantiateViewController(identifier: Constant.loginViewControllerIdentifier)
+        let rootVC = storyboard.instantiateViewController(identifier: Constant.loginNavigationControllerIdentifier)
         
         self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()
