@@ -43,25 +43,17 @@ class LoginViewController: BaseViewController {
         slideUpView.backgroundColor = UIColor.white.withAlphaComponent(0)
         
         let window = self.view.window
-        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        containerView.backgroundColor = UIColor.black.withAlphaComponent(0)
         containerView.frame = self.view.frame
         
         window?.addSubview(containerView)
         
-        let tapGesture = UITapGestureRecognizer(target: self,
-                                                action: #selector(slideUpViewTapped))
-        containerView.addGestureRecognizer(tapGesture)
-        
-        
-        containerView.alpha = 0
         UIView.animate(withDuration: 0.5,
                        delay: 0, usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 1.0,
                        options: .curveEaseInOut, animations: {
-                        self.containerView.alpha = 0.8
+                        self.containerView.alpha = 0
                        }, completion: nil)
-        
-        
         
         slideUpView.frame = CGRect(x: 0, y: Device.height, width: Device.width, height: slideUpViewHeight)
         closeImageView.frame = CGRect(x: 0, y: slideUpView.bounds.minY, width: Device.width, height: Device.height * 0.06)
@@ -78,26 +70,24 @@ class LoginViewController: BaseViewController {
                        delay: 0, usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 1.0,
                        options: .curveEaseInOut, animations: {
-                        self.containerView.alpha = 0.8
+                        self.containerView.alpha = 0
                         self.slideUpView.frame = CGRect(x: 0, y: Device.height - self.slideUpViewHeight, width: Device.width, height: self.slideUpViewHeight)
                        }, completion: nil)
         
         setUpSlideUpView()
     }
     
-    @objc func slideUpViewTapped() {
-        let screenSize = UIScreen.main.bounds.size
-        UIView.animate(withDuration: 0.5,
-                       delay: 0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,
-                       options: .curveEaseInOut, animations: {
-                        self.containerView.alpha = 0
-                        self.slideUpView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideUpViewHeight)
-                       }, completion: nil)
-    }
-    
     func setUpSlideUpView() {
         let closeButton = UIButton()
+        let mySegementControl = UISegmentedControl(items: ["서비스", "개인정보", "위치정보"])
+        mySegementControl.frame = CGRect(x: Device.width * 0.05, y: closeImageView.bounds.maxY + 21, width: Device.width * 0.9, height: 32)
+        let titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.black]
+        mySegementControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        mySegementControl.selectedSegmentTintColor = .white
+        mySegementControl.selectedSegmentIndex = 0
+        mySegementControl.backgroundColor = UIColor.init(hex: 0x767680, alpha: 0.12)
+        
+        slideUpView.addSubview(mySegementControl)
         
         closeButton.frame = CGRect(x: Device.width * 0.88, y: slideUpView.bounds.minY + 20, width: Device.width * 0.069, height: Device.height * 0.023)
         closeButton.center.y = closeImageView.bounds.height / 2
