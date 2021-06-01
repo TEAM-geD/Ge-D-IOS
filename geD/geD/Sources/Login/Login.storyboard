@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,8 +33,11 @@
                                 <state key="normal" title="시작하기" backgroundImage="126">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Slr-ka-FFu" kind="show" id="ZfX-4E-fDD"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-Vo-WEx">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-Vo-WEx">
                                 <rect key="frame" x="65" y="726.33333333333337" width="244" height="26.666666666666629"/>
                                 <attributedString key="attributedText">
                                     <fragment content="시작하기를 누르면 ">
@@ -94,14 +98,71 @@
                             <constraint firstItem="Djf-Ej-Sms" firstAttribute="leading" secondItem="6so-dr-A3i" secondAttribute="leading" constant="36" id="tw2-aX-dbN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ngx-Ni-Xkq"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="termsLabel" destination="aKx-Vo-WEx" id="F8O-DO-0of"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igx-xg-jIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.15384615384613" y="72.511848341232223"/>
+            <point key="canvasLocation" x="596" y="72.413793103448285"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="T4m-1B-xGM">
+            <objects>
+                <viewController id="Slr-ka-FFu" customClass="TutorialViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pi1-wi-qpt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgTutorial01" translatesAutoresizingMaskIntoConstraints="NO" id="exU-JB-Eqd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qV8-VG-G2c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="exU-JB-Eqd" firstAttribute="leading" secondItem="qV8-VG-G2c" secondAttribute="leading" id="Cs4-CZ-5Md"/>
+                            <constraint firstItem="exU-JB-Eqd" firstAttribute="top" secondItem="pi1-wi-qpt" secondAttribute="top" id="Dld-LW-HQu"/>
+                            <constraint firstAttribute="trailing" secondItem="exU-JB-Eqd" secondAttribute="trailing" id="ITS-AW-sP9"/>
+                            <constraint firstAttribute="bottom" secondItem="exU-JB-Eqd" secondAttribute="bottom" id="sYb-a4-GpZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e8m-NY-KZR">
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="LvP-kB-cx1"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAc-y4-845" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="71.674876847290648"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3nx-cT-AeG">
+            <objects>
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="gYV-G4-Wim" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gi5-lv-5La">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ti7-Gm-ZzA" kind="relationship" relationship="rootViewController" id="sdz-2K-HhB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6t-6i-IKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346.39999999999998" y="72.413793103448285"/>
         </scene>
     </scenes>
     <resources>
         <image name="126" width="304" height="42"/>
         <image name="imgSplash" width="375" height="812"/>
+        <image name="imgTutorial01" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
