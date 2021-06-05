@@ -13,17 +13,20 @@ class LoginViewController: BaseViewController {
     var containerView = UIView()
     var slideUpView = UIView()
     var closeImageView = UIImageView()
+    var termsTitleLable = UILabel()
     var slideUpViewHeight: CGFloat = 0.0
+    var firstTermsContentLabel = UILabel()
+    let terms = Terms()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         slideUpViewHeight = Device.height * 0.86
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
         termsLabel.addGestureRecognizer(tap)
-            
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +40,7 @@ class LoginViewController: BaseViewController {
         
         self.navigationController?.navigationBar.isTransparent = false
     }
-
+    
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         let termsView = UIView()
         
@@ -81,7 +84,8 @@ class LoginViewController: BaseViewController {
     func setUpSlideUpView() {
         let closeButton = UIButton()
         let mySegementControl = UISegmentedControl(items: ["서비스", "개인정보", "위치정보"])
-        let termsTitleLable = UILabel()
+       
+        let terms = Terms()
         let termsScrollView = UIScrollView()
         
         // 세그먼트 컨트롤 추가
@@ -91,6 +95,7 @@ class LoginViewController: BaseViewController {
         mySegementControl.selectedSegmentTintColor = .white
         mySegementControl.selectedSegmentIndex = 0
         mySegementControl.backgroundColor = UIColor.init(hex: 0x767680, alpha: 0.12)
+        mySegementControl.addTarget(self, action: #selector(pressSegment), for: UIControl.Event.valueChanged)
         
         slideUpView.addSubview(mySegementControl)
         
@@ -106,7 +111,7 @@ class LoginViewController: BaseViewController {
         closeButton.addTarget(self, action: #selector(LoginViewController.closeButtonPressed), for: .touchUpInside)
         
         // 약관 제목 추가
-        termsTitleLable.text = "서비스 이용약관"
+        termsTitleLable.text = terms.titles[0]
         termsTitleLable.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         termsTitleLable.textColor = .black
         slideUpView.addSubview(termsTitleLable)
@@ -141,12 +146,11 @@ class LoginViewController: BaseViewController {
             make.left.equalTo(termsScrollView.snp.left)
         }
         
-        let firstTermsContentLabel = UILabel()
         firstTermsContentLabel.numberOfLines = 0
         firstTermsContentLabel.textColor = .black
         firstTermsContentLabel.textAlignment = .left
         firstTermsContentLabel.font = UIFont.systemFont(ofSize: 12)
-        firstTermsContentLabel.text = "제1조 (목적)\n이 이용약관(이하 ‘약관’)은 게디(이하 ‘회사’)와 이용 고객(이하 ‘회원’)간에 회사가 제공하는 게디앱 서비스(이하 ‘서비스’)의 가입조건 및 이용에 관한 제반 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.\n\n제2조 (이용약관의 효력 및 변경)\n1. 이 약관은 서비스를 이용하고 하는 모든 회원에 대하여 그 효력을 발생합니다.\n2. 이 약관은 게디앱에 공시됨으로써 효력이 발생되고, 합리적인 사유가 발생할 경우 회사는 관계법령에 위배되지 않는 범위에서 이 약관을 변경할 수 있습니다.\n3. 개정약관도 게디앱 사이트에 온라인으로 공시됨으로써 효력이 발생됩니다. 회사는 약관을 변경할 경우 지체 없이 이를 공시하여야 하고, 회원의 권리나 의무등에 관한 중요사항을 개정할 경우에는 사전에 공시하여야 합니다.\n4. 이 약관에 동의하는 것은 정기적으로 레핏앱 사이트를 방문하여 약관의제1조 (목적)\n이 이용약관(이하 ‘약관’)은 게디(이하 ‘회사’)와 이용 고객(이하 ‘회원’)간에 회사가 제공하는 게디앱 서비스(이하 ‘서비스’)의 가입조건 및 이용에 관한 제반 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.\n\n제2조 (이용약관의 효력 및 변경)\n1. 이 약관은 서비스를 이용하고 하는 모든 회원에 대하여 그 효력을 발생합니다.\n2. 이 약관은 게디앱에 공시됨으로써 효력이 발생되고, 합리적인 사유가 발생할 경우 회사는 관계법령에 위배되지 않는 범위에서 이 약관을 변경할 있습니다.\n3. 개정약관도 게디앱 사이트에 온라인으로 공시됨으로써 효력이 발생됩니다. 회사는 약관을 변경할 경우 지체 없이 이를 공시하여야 하고, 회원의 권리나 의무등에 관한 중요사항을 개정할 경우에는 사전에 공시하여야 합니다.\n4. 이 약관에 동의하는 것은 정기적으로 레핏앱 사이트를 방문하여 약관의제1조 (목적)\n이 이용약관(이하 ‘약관’)은 게디(이하 ‘회사’)와 이용 고객(이하 ‘회원’)간에 회사가 제공하는 게디앱 서비스(이하 ‘서비스’)의 가입조건 및 이용에 관한 제반 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.\n\n제2조 (이용약관의 효력 및 변경)\n1. 이 약관은 서비스를 이용하고 하는 모든 회원에 대하여 그 효력을 발생합니다.\n2. 이 약관은 게디앱에 공시됨으로써 효력이 발생되고, 합리적인 사유가 발생할 경우 회사는 관계법령에 위배되지 않는 범위에서 이 약관을 변경할 있습니다.\n3. 개정약관도 게디앱 사이트에 온라인으로 공시됨으로써 효력이 발생됩니다. 회사는 약관을 변경할 경우 지체 없이 이를 공시하여야 하고, 회원의 권리나 의무등에 관한 중요사항을 개정할 경우에는 사전에 공시하여야 합니다.\n4. 이 약관에 동의하는 것은 정기적으로 레핏앱 사이트를 방문하여 약관의"
+        firstTermsContentLabel.text = terms.contents[0]
         
         termsScrollView.addSubview(firstTermsContentLabel)
         firstTermsContentLabel.snp.makeConstraints { (make) in
@@ -154,9 +158,14 @@ class LoginViewController: BaseViewController {
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+    }
+    
+    @objc func pressSegment(_ sender: UISegmentedControl) {
         
+        let selIdx: Int = sender.selectedSegmentIndex
         
-        
+        termsTitleLable.text = terms.titles[selIdx]
+        firstTermsContentLabel.text = terms.contents[selIdx]
     }
     
     @objc
@@ -170,5 +179,5 @@ class LoginViewController: BaseViewController {
                         self.slideUpView.frame = CGRect(x: 0, y: Device.height, width: Device.width, height: self.slideUpViewHeight)
                        }, completion: nil)
     }
-
+    
 }
