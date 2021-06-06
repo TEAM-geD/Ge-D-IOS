@@ -26,11 +26,12 @@
 		6D441F88265AC82400A2391C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F87265AC82400A2391C /* UIViewController.swift */; };
 		6D441F93265BDF7B00A2391C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F92265BDF7B00A2391C /* BaseViewController.swift */; };
 		6D441F9C265BE08600A2391C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F9B265BE08600A2391C /* Login.storyboard */; };
-		6D441F9F265BE0B400A2391C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F9E265BE0B400A2391C /* LoginViewController.swift */; };
+		6D441F9F265BE0B400A2391C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F9E265BE0B400A2391C /* SplashViewController.swift */; };
 		6D441FA5265BE44600A2391C /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441FA4265BE44600A2391C /* IndicatorView.swift */; };
 		6D441FAA265BE6E200A2391C /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */; };
 		6D441FAB265BE6E200A2391C /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */; };
 		6D441FB0265C114600A2391C /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */; };
+		6D720BDD266D2E1800FFD073 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D720BDC266D2E1800FFD073 /* LoginViewController.swift */; };
 		6D7611212666180B004D953B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7611202666180B004D953B /* Device.swift */; };
 		6D8EE934266B95D2009A85D1 /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EE933266B95D2009A85D1 /* Terms.swift */; };
 		6DB0007226655E3000E1F4F3 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB0007126655E3000E1F4F3 /* TutorialViewController.swift */; };
@@ -64,11 +65,12 @@
 		6D441F87265AC82400A2391C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6D441F92265BDF7B00A2391C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6D441F9B265BE08600A2391C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		6D441F9E265BE0B400A2391C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6D441F9E265BE0B400A2391C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		6D441FA4265BE44600A2391C /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
 		6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		6D720BDC266D2E1800FFD073 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D7611202666180B004D953B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		6D8EE933266B95D2009A85D1 /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
 		6DB0007126655E3000E1F4F3 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -222,7 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				6D441F9B265BE08600A2391C /* Login.storyboard */,
-				6D441F9E265BE0B400A2391C /* LoginViewController.swift */,
+				6D441F9E265BE0B400A2391C /* SplashViewController.swift */,
+				6D720BDC266D2E1800FFD073 /* LoginViewController.swift */,
 				6D8EE933266B95D2009A85D1 /* Terms.swift */,
 				6DB0007026655E0F00E1F4F3 /* Tutorial */,
 			);
@@ -406,9 +409,10 @@
 				6D441F85265AC7D700A2391C /* UIFont.swift in Sources */,
 				6D7611212666180B004D953B /* Device.swift in Sources */,
 				6D2544302664C252008C1701 /* ProjectViewController.swift in Sources */,
-				6D441F9F265BE0B400A2391C /* LoginViewController.swift in Sources */,
+				6D441F9F265BE0B400A2391C /* SplashViewController.swift in Sources */,
 				6D441FA5265BE44600A2391C /* IndicatorView.swift in Sources */,
 				6DC6CB9E26518A9300E0BF29 /* SceneDelegate.swift in Sources */,
+				6D720BDD266D2E1800FFD073 /* LoginViewController.swift in Sources */,
 				6D25442A2664C220008C1701 /* ReferenceViewController.swift in Sources */,
 				6D8EE934266B95D2009A85D1 /* Terms.swift in Sources */,
 				6D2544362664C27C008C1701 /* MemberViewController.swift in Sources */,
