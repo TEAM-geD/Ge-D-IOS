@@ -11,6 +11,8 @@ class TutorialViewController: BaseViewController {
     @IBOutlet weak var myViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var nextBarButtonItem: UIBarButtonItem!
+    var currentPage: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class TutorialViewController: BaseViewController {
         let pageControlImages = ["pageControl1", "pageControl2", "pageControl3"]
         
         myViewWidthConstraint.constant = Device.width * CGFloat(tutorialTitles.count)
+        
+        
         
         for i in 0..<tutorialTitles.count {
             let backgroundImageView = UIImageView()
@@ -69,6 +73,8 @@ class TutorialViewController: BaseViewController {
             }
         }
         
+        scrollView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,4 +85,16 @@ class TutorialViewController: BaseViewController {
         self.navigationItem.hidesBackButton = true
     }
 
+}
+
+extension TutorialViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.currentPage = Int(floor(scrollView.contentOffset.x / Device.width))
+        
+        if currentPage == 2 {
+            nextBarButtonItem.title = "Done"
+        } else {
+            nextBarButtonItem.title = "Skip"
+        }
+    }
 }
