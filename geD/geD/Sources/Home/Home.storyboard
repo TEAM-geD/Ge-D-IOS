@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="X0E-SX-NMG">
@@ -15,10 +20,111 @@
                     <view key="view" contentMode="scaleToFill" id="6IW-UT-glO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X6x-Lv-D52">
+                                <rect key="frame" x="0.0" y="145" width="414" height="668"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nvH-TG-VHE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ihH-aY-uG3">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a5Q-xq-hwd">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GN-s4-hQr">
+                                <rect key="frame" x="18" y="67" width="93" height="23"/>
+                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mK-4d-fNq">
+                                <rect key="frame" x="370" y="64" width="30" height="30"/>
+                                <state key="normal" image="icHeart"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-oo-eZI">
+                                <rect key="frame" x="20" y="99" width="58" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="IRD-eP-uoi"/>
+                                    <constraint firstAttribute="width" constant="58" id="hAZ-v6-ewE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="ALL">
+                                    <color key="titleColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-b2-igK">
+                                <rect key="frame" x="83" y="99" width="66.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="lc7-Yv-Noa"/>
+                                    <constraint firstAttribute="width" constant="66.599999999999994" id="tep-HA-yO9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="iOS app">
+                                    <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2d-ID-mOf">
+                                <rect key="frame" x="154.5" y="99" width="66.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="3wf-ht-Jed"/>
+                                    <constraint firstAttribute="width" constant="66.599999999999994" id="Tc7-sZ-rQm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="AOS app">
+                                    <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4m-5w-2JB">
+                                <rect key="frame" x="226" y="99" width="47" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Fb4-jk-uzz"/>
+                                    <constraint firstAttribute="width" constant="47" id="IGM-4O-OpL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Web">
+                                    <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eL3-TU-kph"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3mK-4d-fNq" firstAttribute="top" secondItem="6IW-UT-glO" secondAttribute="top" constant="64" id="Abr-H0-aeo"/>
+                            <constraint firstItem="t4m-5w-2JB" firstAttribute="leading" secondItem="l2d-ID-mOf" secondAttribute="trailing" constant="5" id="E6V-b9-pXQ"/>
+                            <constraint firstItem="Fse-b2-igK" firstAttribute="leading" secondItem="qb4-oo-eZI" secondAttribute="trailing" constant="5" id="FwR-rB-hwS"/>
+                            <constraint firstItem="X6x-Lv-D52" firstAttribute="leading" secondItem="eL3-TU-kph" secondAttribute="leading" id="JN1-jO-3CF"/>
+                            <constraint firstItem="0GN-s4-hQr" firstAttribute="top" secondItem="6IW-UT-glO" secondAttribute="top" constant="67" id="NKT-Ks-F36"/>
+                            <constraint firstItem="eL3-TU-kph" firstAttribute="bottom" secondItem="X6x-Lv-D52" secondAttribute="bottom" id="VaZ-dX-hqc"/>
+                            <constraint firstItem="qb4-oo-eZI" firstAttribute="top" secondItem="0GN-s4-hQr" secondAttribute="bottom" constant="9" id="Vaq-u2-Fes"/>
+                            <constraint firstItem="l2d-ID-mOf" firstAttribute="leading" secondItem="Fse-b2-igK" secondAttribute="trailing" constant="5" id="ZTj-TY-Oxy"/>
+                            <constraint firstItem="t4m-5w-2JB" firstAttribute="top" secondItem="l2d-ID-mOf" secondAttribute="top" id="aNg-AZ-Nac"/>
+                            <constraint firstItem="l2d-ID-mOf" firstAttribute="top" secondItem="Fse-b2-igK" secondAttribute="top" id="eND-Wq-Nml"/>
+                            <constraint firstItem="0GN-s4-hQr" firstAttribute="leading" secondItem="6IW-UT-glO" secondAttribute="leading" constant="18" id="fMG-i6-GXP"/>
+                            <constraint firstItem="Fse-b2-igK" firstAttribute="top" secondItem="qb4-oo-eZI" secondAttribute="top" id="fru-ms-grz"/>
+                            <constraint firstItem="eL3-TU-kph" firstAttribute="trailing" secondItem="X6x-Lv-D52" secondAttribute="trailing" id="ggz-vS-Wx8"/>
+                            <constraint firstItem="qb4-oo-eZI" firstAttribute="leading" secondItem="eL3-TU-kph" secondAttribute="leading" constant="20" id="sF7-Wu-39W"/>
+                            <constraint firstItem="X6x-Lv-D52" firstAttribute="top" secondItem="6IW-UT-glO" secondAttribute="top" constant="145" id="shT-Gj-z7b"/>
+                            <constraint firstAttribute="trailing" secondItem="3mK-4d-fNq" secondAttribute="trailing" constant="14" id="vx9-ua-Upj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="osj-IA-74q"/>
+                    <connections>
+                        <outlet property="allButton" destination="qb4-oo-eZI" id="StN-9R-n2O"/>
+                        <outlet property="aosButton" destination="l2d-ID-mOf" id="JG7-dt-Ox6"/>
+                        <outlet property="homeCollectionView" destination="X6x-Lv-D52" id="5qM-I1-kiN"/>
+                        <outlet property="iosButton" destination="Fse-b2-igK" id="D2u-OB-HJy"/>
+                        <outlet property="webButton" destination="t4m-5w-2JB" id="a4Y-Gw-V05"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbM-PX-jAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,9 +152,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icHeart" width="30" height="30"/>
         <image name="icTabHomeP" width="17.5" height="19.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

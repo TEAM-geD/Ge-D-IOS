@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
         self.window = UIWindow(windowScene: windowScene)
         
-//        self.goToMain()
-        self.goToLogin()
+        self.goToMain()
+        //self.goToLogin()
     }
     
 //    func goToMain() {
