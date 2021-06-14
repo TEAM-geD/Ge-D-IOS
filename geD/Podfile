@@ -15,4 +15,5 @@ target 'geD' do
   pod 'KeychainSwift', '~> 19.0'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'naveridlogin-sdk-ios'
 end

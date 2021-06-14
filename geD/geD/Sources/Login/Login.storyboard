@@ -190,6 +190,9 @@
                                     <constraint firstAttribute="height" constant="80" id="jS3-5B-OD9"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icLoginNaverBright46Dp"/>
+                                <connections>
+                                    <action selector="naverLoginButtonPressed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="wz8-rx-Otc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-e2-aaD">
                                 <rect key="frame" x="235" y="637" width="80" height="80"/>

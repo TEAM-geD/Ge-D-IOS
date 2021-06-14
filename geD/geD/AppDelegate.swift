@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKCommon
 import Firebase
 import FirebaseMessaging
+import NaverThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -35,6 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
 
         application.registerForRemoteNotifications()
+        
+        // 네이버 로그인
+        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+        
+        instance?.isNaverAppOauthEnable = true
+        instance?.isInAppOauthEnable = true
+        
+        instance?.isOnlyPortraitSupportedInIphone()
+        
+        instance?.serviceUrlScheme = kServiceAppUrlScheme
+        instance?.consumerKey = kConsumerKey
+        instance?.consumerSecret = kConsumerSecret
+        instance?.appName = kServiceAppName
+        
         return true
     }
 
@@ -60,6 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("\(#function)")
     }
     
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        NaverThirdPartyLoginConnection.getSharedInstance().application(app, open: url, options: options)
+//        return true
+//    }
 }
 
 extension AppDelegate: MessagingDelegate {
