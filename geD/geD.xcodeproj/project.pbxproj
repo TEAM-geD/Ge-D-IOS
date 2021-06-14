@@ -31,7 +31,7 @@
 		6D441FAA265BE6E200A2391C /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */; };
 		6D441FAB265BE6E200A2391C /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */; };
 		6D441FB0265C114600A2391C /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */; };
-		6D6CE77326777DD3007FA5FB /* KakaoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6CE77226777DD3007FA5FB /* KakaoKey.swift */; };
+		6D6107142677C5D000312FA5 /* KakaoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6107132677C5D000312FA5 /* KakaoKey.swift */; };
 		6D6CE775267790A3007FA5FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D6CE774267790A3007FA5FB /* GoogleService-Info.plist */; };
 		6D6CE7782677968C007FA5FB /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6CE7772677968C007FA5FB /* LoginInput.swift */; };
 		6D6CE77A2677972E007FA5FB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6CE7792677972E007FA5FB /* LoginResponse.swift */; };
@@ -75,7 +75,7 @@
 		6D441FA7265BE6E200A2391C /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		6D441FA8265BE6E200A2391C /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
 		6D441FAF265C114500A2391C /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		6D6CE77226777DD3007FA5FB /* KakaoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoKey.swift; sourceTree = "<group>"; };
+		6D6107132677C5D000312FA5 /* KakaoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KakaoKey.swift; path = ../../../../../../Documents/KakaoKey.swift; sourceTree = "<group>"; };
 		6D6CE774267790A3007FA5FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D6CE77626779203007FA5FB /* geD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = geD.entitlements; sourceTree = "<group>"; };
 		6D6CE7772677968C007FA5FB /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		6D441F7A265ABC8300A2391C /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				6D6CE77226777DD3007FA5FB /* KakaoKey.swift */,
+				6D6107132677C5D000312FA5 /* KakaoKey.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -446,8 +446,8 @@
 				6D2544302664C252008C1701 /* ProjectViewController.swift in Sources */,
 				6D441F9F265BE0B400A2391C /* SplashViewController.swift in Sources */,
 				6D6CE77D2677977D007FA5FB /* LoginDataManager.swift in Sources */,
-				6D6CE77326777DD3007FA5FB /* KakaoKey.swift in Sources */,
 				6D441FA5265BE44600A2391C /* IndicatorView.swift in Sources */,
+				6D6107142677C5D000312FA5 /* KakaoKey.swift in Sources */,
 				6DC6CB9E26518A9300E0BF29 /* SceneDelegate.swift in Sources */,
 				6D720BDD266D2E1800FFD073 /* LoginViewController.swift in Sources */,
 				6D25442A2664C220008C1701 /* ReferenceViewController.swift in Sources */,
