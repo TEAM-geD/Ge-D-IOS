@@ -206,6 +206,9 @@
                                     <constraint firstAttribute="height" constant="80" id="MAT-TH-2Zc"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icLoginKakaoBright46Dp"/>
+                                <connections>
+                                    <action selector="kakaoLoginButtonPresed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="XDN-eu-gbo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 없이 바로 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69W-pZ-C13">
                                 <rect key="frame" x="133" y="732" width="124" height="15"/>
