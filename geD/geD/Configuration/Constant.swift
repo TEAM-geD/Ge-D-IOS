@@ -11,5 +11,6 @@ struct Constant {
     static let loginViewControllerIdentifier = "LoginViewController"
     static let loginNavigationControllerIdentifier = "LoginNavigationController"
     static let mainTabBarControllerIdentifier = "MainTabBarController"
+    static let BASE_URL = "https://ged-project.shop"
     
 }

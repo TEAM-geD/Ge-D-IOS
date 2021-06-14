@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,14 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        self.goToMain()
         self.goToLogin()
     }
-    
-//    func goToMain() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-////        let rootVC = storyboard.instantiateViewController(identifier: Constant.mainTabBarControllerIdentifier)
-//        
-//        self.window?.rootViewController = rootVC
-//        self.window?.makeKeyAndVisible()
-//    }
     
     func goToLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -75,6 +68,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        }
+    }
+
 
 
 }
