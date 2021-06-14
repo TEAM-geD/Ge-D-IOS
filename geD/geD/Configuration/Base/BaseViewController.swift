@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class BaseViewController: UIViewController {
     
@@ -19,5 +20,28 @@ class BaseViewController: UIViewController {
 //        ]
         // Background Color
 //        self.view.backgroundColor = .white
+    }
+    
+    func isLogin() -> Bool {
+        let keyChain = KeychainSwift()
+        if keyChain.get("jwtToken") != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func goToMain() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: Constant.mainTabBarControllerIdentifier)
+        
+        changeRootViewController(mainTabBarController)
+    }
+    
+    func goToLogin() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(identifier: Constant.loginViewControllerIdentifier)
+        
+        changeRootViewController(loginViewController)
     }
 }
