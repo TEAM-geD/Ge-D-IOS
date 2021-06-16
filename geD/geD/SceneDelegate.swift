@@ -8,6 +8,7 @@
 import UIKit
 import KakaoSDKAuth
 import NaverThirdPartyLogin
+import KeychainSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,8 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
         self.window = UIWindow(windowScene: windowScene)
         
+        AutoLoginDataManager().autoLogin(sceneDelegate: self)
+        
 //        self.goToMain()
-        self.goToLogin()
+//        self.goToLogin()
     }
     
     func goToLogin() {

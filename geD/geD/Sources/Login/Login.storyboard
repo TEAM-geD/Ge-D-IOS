@@ -201,6 +201,9 @@
                                     <constraint firstAttribute="width" constant="80" id="GcN-ta-6rv"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icLoginAppleBright46Dp"/>
+                                <connections>
+                                    <action selector="appleLoginButtonPressed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="zzS-7a-xZp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-iP-MCn">
                                 <rect key="frame" x="75" y="637" width="80" height="80"/>
