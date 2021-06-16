@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D02F8D1267A5C68009E7B89 /* AutoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02F8D0267A5C68009E7B89 /* AutoLoginResponse.swift */; };
+		6D02F8D3267A5CB7009E7B89 /* AutoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02F8D2267A5CB7009E7B89 /* AutoLoginDataManager.swift */; };
 		6D2544192664C0D4008C1701 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2544182664C0D4008C1701 /* Home.storyboard */; };
 		6D2544202664C105008C1701 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25441F2664C105008C1701 /* HomeViewController.swift */; };
 		6D2544272664C1F9008C1701 /* Reference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2544262664C1F9008C1701 /* Reference.storyboard */; };
@@ -51,6 +53,8 @@
 		092C9E1A9B70F1B22F1D01C8 /* Pods_geD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_geD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3457DDBDF7E98784F6E66767 /* Pods-geD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geD.release.xcconfig"; path = "Target Support Files/Pods-geD/Pods-geD.release.xcconfig"; sourceTree = "<group>"; };
 		40C989CDD78A6C575E2F7D60 /* Pods-geD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-geD.debug.xcconfig"; path = "Target Support Files/Pods-geD/Pods-geD.debug.xcconfig"; sourceTree = "<group>"; };
+		6D02F8D0267A5C68009E7B89 /* AutoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginResponse.swift; sourceTree = "<group>"; };
+		6D02F8D2267A5CB7009E7B89 /* AutoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginDataManager.swift; sourceTree = "<group>"; };
 		6D2544182664C0D4008C1701 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6D25441F2664C105008C1701 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D2544262664C1F9008C1701 /* Reference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reference.storyboard; sourceTree = "<group>"; };
@@ -120,6 +124,31 @@
 				3457DDBDF7E98784F6E66767 /* Pods-geD.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6D02F8CD267A5C27009E7B89 /* AutoLogin */ = {
+			isa = PBXGroup;
+			children = (
+				6D02F8CE267A5C46009E7B89 /* Entity */,
+				6D02F8CF267A5C4B009E7B89 /* DataManager */,
+			);
+			path = AutoLogin;
+			sourceTree = "<group>";
+		};
+		6D02F8CE267A5C46009E7B89 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6D02F8D0267A5C68009E7B89 /* AutoLoginResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		6D02F8CF267A5C4B009E7B89 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D02F8D2267A5CB7009E7B89 /* AutoLoginDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		6D24EEA62672E80A0034FD95 /* Entity */ = {
@@ -222,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				6D2544502664CD1D008C1701 /* Main.storyboard */,
+				6D02F8CD267A5C27009E7B89 /* AutoLogin */,
 				6D441F9A265BE06B00A2391C /* Login */,
 				6D2544172664C094008C1701 /* Home */,
 				6D2544222664C179008C1701 /* Reference */,
@@ -443,12 +473,14 @@
 				6D6CE77A2677972E007FA5FB /* LoginResponse.swift in Sources */,
 				6D441F85265AC7D700A2391C /* UIFont.swift in Sources */,
 				6D7611212666180B004D953B /* Device.swift in Sources */,
+				6D02F8D1267A5C68009E7B89 /* AutoLoginResponse.swift in Sources */,
 				6D2544302664C252008C1701 /* ProjectViewController.swift in Sources */,
 				6D441F9F265BE0B400A2391C /* SplashViewController.swift in Sources */,
 				6D6CE77D2677977D007FA5FB /* LoginDataManager.swift in Sources */,
 				6D6CE77326777DD3007FA5FB /* KakaoKey.swift in Sources */,
 				6D441FA5265BE44600A2391C /* IndicatorView.swift in Sources */,
 				6DC6CB9E26518A9300E0BF29 /* SceneDelegate.swift in Sources */,
+				6D02F8D3267A5CB7009E7B89 /* AutoLoginDataManager.swift in Sources */,
 				6D720BDD266D2E1800FFD073 /* LoginViewController.swift in Sources */,
 				6D25442A2664C220008C1701 /* ReferenceViewController.swift in Sources */,
 				6D8EE934266B95D2009A85D1 /* Terms.swift in Sources */,

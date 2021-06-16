@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKUser
 import NaverThirdPartyLogin
 import KeychainSwift
+import AuthenticationServices
 
 class LoginViewController: BaseViewController {
 
@@ -90,11 +91,24 @@ class LoginViewController: BaseViewController {
         
         print("Access Token : \(accessToken)")
         
+        showIndicator()
+        
         let input = LoginInput(accessToken: accessToken)
         LoginDataManager().naverLogin(input, viewController: self)
     }
+    
+    @IBAction func appleLoginButtonPressed(_ sender: UIButton) {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+        controller.performRequests()
+    }
 }
 
+//MARK: - Naver Login
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("네이버 액세스 토큰 가져오기 성공!")
@@ -112,4 +126,38 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     }
     
     
+}
+
+
+//MARK: - Apple Login
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            
+            let idToken = credential.identityToken!
+            let tokeStr = String(data: idToken, encoding: .utf8)
+            print(tokeStr!)
+            
+            guard let code = credential.authorizationCode else { return }
+            let codeStr = String(data: code, encoding: .utf8)
+            print(codeStr!)
+            
+            let user = credential.user
+            print("User ID : \(user)")
+            
+            let email = credential.email
+            print("User Email : \(email ?? "")")
+            
+            let fullName = credential.fullName
+            print("User Name : \(fullName?.givenName ?? "") + \(fullName?.familyName ?? "")")
+            
+            showIndicator()
+            goToMain()
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
+    }
 }
