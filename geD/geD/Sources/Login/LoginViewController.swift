@@ -17,9 +17,6 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 네이버 로그아웃
-        naverLoginInstance?.requestDeleteToken()
 
         // Do any additional setup after loading the view.
         naverLoginInstance?.delegate = self
@@ -42,8 +39,7 @@ class LoginViewController: BaseViewController {
                 self.showIndicator()
                 if let oauthToken = oauthToken {
                     let accessToken = oauthToken.accessToken
-                    let input = LoginInput(accessToken: accessToken)
-                    LoginDataManager().kakaoLogin(input, viewController: self)
+                    LoginDataManager().kakaoLogin(accessToken, viewController: self)
                 }
                 
                 _ = oauthToken
@@ -66,8 +62,7 @@ class LoginViewController: BaseViewController {
                 self.showIndicator()
                 if let oauthToken = oauthToken {
                     let accessToken = oauthToken.accessToken
-                    let input = LoginInput(accessToken: accessToken)
-                    LoginDataManager().kakaoLogin(input, viewController: self)
+                    LoginDataManager().kakaoLogin(accessToken, viewController: self)
                 }
 
                 _ = oauthToken
@@ -77,6 +72,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func naverLoginButtonPressed(_ sender: UIButton) {
+        naverLoginInstance?.resetToken()
         naverLoginInstance?.requestThirdPartyLogin()
     }
     
@@ -93,8 +89,7 @@ class LoginViewController: BaseViewController {
         
         showIndicator()
         
-        let input = LoginInput(accessToken: accessToken)
-        LoginDataManager().naverLogin(input, viewController: self)
+        LoginDataManager().naverLogin(accessToken, viewController: self)
     }
     
     @IBAction func appleLoginButtonPressed(_ sender: UIButton) {
@@ -137,23 +132,21 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             let idToken = credential.identityToken!
             let tokeStr = String(data: idToken, encoding: .utf8)
-            print(tokeStr!)
-            
-            guard let code = credential.authorizationCode else { return }
-            let codeStr = String(data: code, encoding: .utf8)
-            print(codeStr!)
-            
-            let user = credential.user
-            print("User ID : \(user)")
+            print("ID Token: \(tokeStr ?? "")")
             
             let email = credential.email
-            print("User Email : \(email ?? "")")
             
             let fullName = credential.fullName
-            print("User Name : \(fullName?.givenName ?? "") + \(fullName?.familyName ?? "")")
+            var fullNameStr: String?
+            if let familyName = fullName?.familyName, let givenName = fullName?.givenName {
+                fullNameStr = familyName + givenName
+            }
+            print(fullNameStr ?? "")
+            
+            let input = LoginInput(userName: fullNameStr, userEmail: email)
             
             showIndicator()
-            goToMain()
+            LoginDataManager().appleLogin(input, tokeStr!, viewController: self)
         }
     }
     
