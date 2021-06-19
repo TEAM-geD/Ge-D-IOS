@@ -11,7 +11,7 @@ struct LoginResponse: Decodable {
     let code: Int
     let message: String
     
-    let result: LoginResult
+    let result: LoginResult?
 }
 
 struct LoginResult: Decodable {
