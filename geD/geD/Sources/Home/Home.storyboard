@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,6 +51,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mK-4d-fNq">
                                 <rect key="frame" x="370" y="64" width="30" height="30"/>
                                 <state key="normal" image="icHeart"/>
+                                <connections>
+                                    <action selector="heartButtonTouchUpInside:" destination="783-rq-K9i" eventType="touchUpInside" id="da3-cj-m4h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-oo-eZI">
                                 <rect key="frame" x="20" y="99" width="58" height="25"/>
@@ -121,6 +125,7 @@
                     <connections>
                         <outlet property="allButton" destination="qb4-oo-eZI" id="StN-9R-n2O"/>
                         <outlet property="aosButton" destination="l2d-ID-mOf" id="JG7-dt-Ox6"/>
+                        <outlet property="heartButton" destination="3mK-4d-fNq" id="VQ5-ng-s9d"/>
                         <outlet property="homeCollectionView" destination="X6x-Lv-D52" id="5qM-I1-kiN"/>
                         <outlet property="iosButton" destination="Fse-b2-igK" id="D2u-OB-HJy"/>
                         <outlet property="webButton" destination="t4m-5w-2JB" id="a4Y-Gw-V05"/>
@@ -129,6 +134,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbM-PX-jAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="602.89855072463774" y="172.76785714285714"/>
+        </scene>
+        <!--Heart View Controller-->
+        <scene sceneID="U4W-cT-bPG">
+            <objects>
+                <viewController storyboardIdentifier="HeartViewController" id="DWd-Nv-W7F" customClass="HeartViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5f-ve-Nvr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PV0-zX-Qh6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5aF-Ff-fH0">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c7j-LN-1Sz">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BFs-BI-u7N">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xg7-uV-XLa"/>
+                        <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xg7-uV-XLa" firstAttribute="trailing" secondItem="PV0-zX-Qh6" secondAttribute="trailing" id="St9-Of-Kip"/>
+                            <constraint firstItem="PV0-zX-Qh6" firstAttribute="top" secondItem="Xg7-uV-XLa" secondAttribute="top" id="X3a-a5-OTL"/>
+                            <constraint firstItem="PV0-zX-Qh6" firstAttribute="leading" secondItem="Xg7-uV-XLa" secondAttribute="leading" id="XDf-MT-2ZB"/>
+                            <constraint firstItem="Xg7-uV-XLa" firstAttribute="bottom" secondItem="PV0-zX-Qh6" secondAttribute="bottom" id="jJ6-0P-5tz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pn0-Y6-OGc"/>
+                    <connections>
+                        <outlet property="heartTableView" destination="PV0-zX-Qh6" id="BEm-4f-KDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5A-mH-qO2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525" y="173"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kKe-r1-fX4">
+            <objects>
+                <viewController id="XRg-ZU-SzC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hsh-iX-Ho0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Auy-u3-H4a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1Z-KF-PY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="172"/>
         </scene>
         <!--홈-->
         <scene sceneID="tvB-Kd-pje">
@@ -154,5 +221,8 @@
     <resources>
         <image name="icHeart" width="30" height="30"/>
         <image name="icTabHomeP" width="17.5" height="19.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

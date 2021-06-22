@@ -22,8 +22,8 @@
                             <constraint firstAttribute="height" constant="97" id="gor-yC-t2S"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="29cm 같이 심플한 매거진 앱 프로젝트" translatesAutoresizingMaskIntoConstraints="NO" id="daQ-TU-4hz">
-                        <rect key="frame" x="5" y="102" width="147" height="40"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="29cm 같이 심플한 매거진 앱 프로젝트" translatesAutoresizingMaskIntoConstraints="NO" id="daQ-TU-4hz">
+                        <rect key="frame" x="5" y="97" width="147" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="oXg-Ju-JyX"/>
@@ -65,8 +65,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="daQ-TU-4hz" firstAttribute="top" secondItem="hyJ-eq-96Q" secondAttribute="bottom" constant="5" id="07H-TD-ZUA"/>
-                <constraint firstItem="zdn-KY-J4T" firstAttribute="top" secondItem="daQ-TU-4hz" secondAttribute="bottom" constant="20" id="0oA-XA-Rwb"/>
+                <constraint firstItem="daQ-TU-4hz" firstAttribute="top" secondItem="hyJ-eq-96Q" secondAttribute="bottom" id="07H-TD-ZUA"/>
+                <constraint firstItem="zdn-KY-J4T" firstAttribute="top" secondItem="daQ-TU-4hz" secondAttribute="bottom" constant="25" id="0oA-XA-Rwb"/>
                 <constraint firstItem="zdn-KY-J4T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="-9" id="2jy-KB-BAw"/>
                 <constraint firstAttribute="bottom" secondItem="Oo4-Ni-wKf" secondAttribute="bottom" constant="13" id="3Rl-Co-WE7"/>
                 <constraint firstItem="A7u-vy-DPN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="CAY-jr-FHN"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="Oo4-Ni-wKf" firstAttribute="leading" secondItem="MuT-Nu-O1C" secondAttribute="trailing" constant="3" id="Thl-xN-Zqv"/>
                 <constraint firstItem="MuT-Nu-O1C" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="gbO-6f-AI2"/>
                 <constraint firstAttribute="trailing" secondItem="daQ-TU-4hz" secondAttribute="trailing" constant="10" id="k5k-BO-sOv"/>
-                <constraint firstItem="A7u-vy-DPN" firstAttribute="top" secondItem="daQ-TU-4hz" secondAttribute="bottom" constant="8" id="nQZ-wh-m1d"/>
+                <constraint firstItem="A7u-vy-DPN" firstAttribute="top" secondItem="daQ-TU-4hz" secondAttribute="bottom" constant="13" id="nQZ-wh-m1d"/>
                 <constraint firstItem="hyJ-eq-96Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="shf-aF-nC2"/>
                 <constraint firstAttribute="trailing" secondItem="hyJ-eq-96Q" secondAttribute="trailing" id="wT0-fN-t3R"/>
                 <constraint firstAttribute="bottom" secondItem="MuT-Nu-O1C" secondAttribute="bottom" constant="13" id="xjA-VS-Yu8"/>

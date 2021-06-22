@@ -1,0 +1,63 @@
+//
+//  HeartViewController.swift
+//  geD
+//
+//  Created by 김민석 on 2021/06/22.
+//
+
+import UIKit
+
+class HeartViewController: UIViewController {
+
+    @IBOutlet weak var heartTableView: UICollectionView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationSetting()
+        heartTableView.delegate = self
+        heartTableView.dataSource = self
+        heartTableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+    }
+
+    
+
+}
+extension HeartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell else {
+            return UICollectionViewCell()
+        }
+        cell.layer.cornerRadius = 10
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 11
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 11
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let sectionInset = UIEdgeInsets(top: 18, left: 20, bottom: 0, right: 20)
+        return sectionInset
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (self.heartTableView.frame.width - 40) / 2 - 11
+        let size = CGSize(width: width, height: 234)
+        return size
+    }
+}
+extension HeartViewController{
+    func navigationSetting(){
+        self.navigationController?.navigationBar.isTransparent = true
+        UINavigationBar.appearance().barTintColor = UIColor(red: 33/255, green: 33/255 , blue: 33/255, alpha: 1)
+        self.navigationItem.title = "찜한 내역"
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+}

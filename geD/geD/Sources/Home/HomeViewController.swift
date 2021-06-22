@@ -15,12 +15,14 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var webButton: UIButton!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
+    @IBOutlet weak var heartButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
         homeCollectionView.register(UINib(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
         buttonLayout()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 33/255, green: 33/255 , blue: 33/255, alpha: 1)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +44,15 @@ class HomeViewController: BaseViewController {
         webButton.layer.borderColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1).cgColor
 
     }
+    @IBAction func heartButtonTouchUpInside(_ sender: UIButton) {
+        guard let heartVC = self.storyboard?.instantiateViewController(identifier: "HeartViewController") else {
+            return
+        }
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(heartVC, animated: true)
+    }
+    
+    
 }
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +66,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.cornerRadius = 10
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("셀 클릭")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 11
     }
