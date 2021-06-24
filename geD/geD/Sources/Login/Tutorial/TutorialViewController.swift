@@ -21,6 +21,7 @@ class TutorialViewController: BaseViewController {
         let tutorialSubtitles = ["프로젝트를 등록하면 주제와 맞는\n팀원을 구할 수 있어요.", "개발, 디자인, 기획까지\n다양한 레퍼런스를 찾아보세요.", "멤버스를 등록하면\n내 정보를 공개할 수 있어요."]
         let backgroundImages = ["imgTutorial01", "imgTutorial02", "imgTutorial03"]
         let pageControlImages = ["pageControl1", "pageControl2", "pageControl3"]
+        let splashImages = ["imgTutorialStep1", "imgTutorialStep2", "imgTutorialStep3"]
         
         myViewWidthConstraint.constant = Device.width * CGFloat(tutorialTitles.count)
         
@@ -31,7 +32,8 @@ class TutorialViewController: BaseViewController {
             let titleLabel = UILabel()
             let subtitleLabel = UILabel()
             let pageControlImageView = UIImageView()
-//            backgroundImageView.frame = CGRect(x: Device.width * CGFloat(i), y: myView.frame.minY, width: Device.width + 20, height: myView.frame.height)
+            let splashImageView = UIImageView()
+            
             backgroundImageView.contentMode = .scaleAspectFill
             backgroundImageView.image = UIImage(named: backgroundImages[i])
             myView.addSubview(backgroundImageView)
@@ -69,6 +71,15 @@ class TutorialViewController: BaseViewController {
             
             pageControlImageView.snp.makeConstraints { (make) in
                 make.top.equalTo(subtitleLabel.snp.bottom).offset(24)
+                make.centerX.equalToSuperview()
+            }
+            
+            splashImageView.image = UIImage(named: splashImages[i])
+            splashImageView.contentMode = .scaleAspectFill
+            backgroundImageView.addSubview(splashImageView)
+            
+            splashImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(pageControlImageView.snp.bottom).offset(60)
                 make.centerX.equalToSuperview()
             }
         }

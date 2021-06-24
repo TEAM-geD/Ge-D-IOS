@@ -101,6 +101,11 @@ class LoginViewController: BaseViewController {
         controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
         controller.performRequests()
     }
+    
+    @IBAction func withoutLoginButtonPressed(_ sender: UIButton) {
+        showIndicator()
+        goToMain()
+    }
 }
 
 //MARK: - Naver Login

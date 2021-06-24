@@ -42,39 +42,39 @@
                                 <attributedString key="attributedText">
                                     <fragment content="시작하기를 누르면 ">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="서비스 이용약관,">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="  ">
+                                    <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">개인정보 이용약관, 
-위치정보 이용약관</string>
+                                        <string key="content">개인정보 이용약관
+</string>
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" 동의로 간주합니다.">
+                                    <fragment content="동의로 간주합니다.">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -178,13 +178,13 @@
                                 <rect key="frame" x="-1" y="-1" width="392" height="846"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNS계정으로 간편 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyY-s3-rDd">
-                                <rect key="frame" x="122.66666666666669" y="610" width="145" height="17"/>
+                                <rect key="frame" x="122.66666666666669" y="598" width="145" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-HB-jCq">
-                                <rect key="frame" x="155" y="637" width="80" height="80"/>
+                                <rect key="frame" x="155" y="625" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9wC-j8-Ejt"/>
                                     <constraint firstAttribute="height" constant="80" id="jS3-5B-OD9"/>
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-e2-aaD">
-                                <rect key="frame" x="235" y="637" width="80" height="80"/>
+                                <rect key="frame" x="235" y="625" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8qu-K5-g5d"/>
                                     <constraint firstAttribute="width" constant="80" id="GcN-ta-6rv"/>
@@ -206,7 +206,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-iP-MCn">
-                                <rect key="frame" x="75" y="637" width="80" height="80"/>
+                                <rect key="frame" x="75" y="625" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="0h9-Vk-RUE"/>
                                     <constraint firstAttribute="height" constant="80" id="MAT-TH-2Zc"/>
@@ -216,12 +216,6 @@
                                     <action selector="kakaoLoginButtonPresed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="XDN-eu-gbo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 없이 바로 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69W-pZ-C13">
-                                <rect key="frame" x="133" y="732" width="124" height="15"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgH-nA-Hzq">
                                 <rect key="frame" x="42.666666666666657" y="619" width="76" height="0.66666666666662877"/>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
@@ -236,6 +230,16 @@
                                     <constraint firstAttribute="height" constant="0.5" id="bnd-Rr-NHL"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opj-dw-tqa">
+                                <rect key="frame" x="133" y="720" width="124" height="27"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <state key="normal" title="로그인 없이 바로 시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="withoutLoginButtonPressed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="AJm-EQ-Ynv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y97-43-LoT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -244,20 +248,20 @@
                             <constraint firstItem="jgk-iP-MCn" firstAttribute="top" secondItem="pyY-s3-rDd" secondAttribute="bottom" constant="10" id="5Jf-4B-OUN"/>
                             <constraint firstAttribute="bottom" secondItem="xgH-nA-Hzq" secondAttribute="bottom" constant="224.5" id="70Q-lx-nuJ"/>
                             <constraint firstItem="sib-Mb-gKo" firstAttribute="leading" secondItem="45e-iN-Jep" secondAttribute="leading" constant="-1" id="Ai3-7Q-y39"/>
-                            <constraint firstAttribute="bottom" secondItem="69W-pZ-C13" secondAttribute="bottom" constant="97" id="KYi-4G-Ump"/>
+                            <constraint firstItem="opj-dw-tqa" firstAttribute="top" secondItem="bh6-HB-jCq" secondAttribute="bottom" constant="15" id="EKX-Iy-GU6"/>
                             <constraint firstItem="Y97-43-LoT" firstAttribute="trailing" secondItem="sib-Mb-gKo" secondAttribute="trailing" constant="-1" id="L1n-kR-knZ"/>
                             <constraint firstAttribute="bottom" secondItem="sib-Mb-gKo" secondAttribute="bottom" constant="-1" id="NiG-g9-nvh"/>
+                            <constraint firstItem="opj-dw-tqa" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="OaR-SP-Z0d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dHw-CW-gzW" secondAttribute="trailing" constant="42.700000000000003" id="Tnd-iZ-ofg"/>
                             <constraint firstItem="xgH-nA-Hzq" firstAttribute="leading" secondItem="45e-iN-Jep" secondAttribute="leading" constant="42.700000000000003" id="Wug-k7-4yc"/>
-                            <constraint firstItem="69W-pZ-C13" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="fzp-n9-91f"/>
                             <constraint firstItem="pyY-s3-rDd" firstAttribute="leadingMargin" secondItem="xgH-nA-Hzq" secondAttribute="trailing" constant="12" id="hWC-Yg-sPq"/>
-                            <constraint firstItem="69W-pZ-C13" firstAttribute="top" secondItem="bh6-HB-jCq" secondAttribute="bottom" constant="15" id="lUs-hM-yL5"/>
                             <constraint firstItem="i6U-e2-aaD" firstAttribute="top" secondItem="pyY-s3-rDd" secondAttribute="bottom" constant="10" id="lyp-M9-YU6"/>
                             <constraint firstItem="pyY-s3-rDd" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="md3-Tl-5Ls"/>
                             <constraint firstAttribute="bottom" secondItem="dHw-CW-gzW" secondAttribute="bottom" constant="224.5" id="nd7-lE-mh4"/>
                             <constraint firstItem="sib-Mb-gKo" firstAttribute="top" secondItem="45e-iN-Jep" secondAttribute="top" constant="-1" id="oHr-su-5e3"/>
                             <constraint firstItem="bh6-HB-jCq" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="rr0-Yh-h3R"/>
                             <constraint firstItem="bh6-HB-jCq" firstAttribute="leading" secondItem="jgk-iP-MCn" secondAttribute="trailing" id="tfe-Tp-8Ou"/>
+                            <constraint firstAttribute="bottom" secondItem="opj-dw-tqa" secondAttribute="bottom" constant="97" id="xES-fh-H6U"/>
                             <constraint firstItem="dHw-CW-gzW" firstAttribute="leading" secondItem="pyY-s3-rDd" secondAttribute="trailingMargin" constant="12" id="xSJ-7o-x94"/>
                             <constraint firstItem="i6U-e2-aaD" firstAttribute="leading" secondItem="bh6-HB-jCq" secondAttribute="trailing" id="xdG-3r-bEy"/>
                         </constraints>

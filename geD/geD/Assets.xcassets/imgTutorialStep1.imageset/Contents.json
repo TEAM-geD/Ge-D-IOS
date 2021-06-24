@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "icLoginKakaoBright46Dp.png"
+      "filename" : "imgTutorialStep1.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icLoginKakaoBright46Dp@2x.png",
+      "filename" : "imgTutorialStep1@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "icLoginKakaoBright46Dp@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "imgTutorialStep1@3x.png"
     }
   ],
   "info" : {
