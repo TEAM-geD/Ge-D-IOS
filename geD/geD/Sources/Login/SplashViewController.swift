@@ -83,7 +83,7 @@ class SplashViewController: BaseViewController {
     
     func setUpSlideUpView() {
         let closeButton = UIButton()
-        let mySegementControl = UISegmentedControl(items: ["서비스", "개인정보", "위치정보"])
+        let mySegementControl = UISegmentedControl(items: ["서비스", "개인정보"])
        
         let terms = Terms()
         let termsScrollView = UIScrollView()
