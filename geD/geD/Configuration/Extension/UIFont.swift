@@ -32,8 +32,16 @@ extension UIFont {
         case regular = "Regular"
     }
     
+    public enum GmarketSansType: String {
+        case bold = "Bold"
+    }
+    
     static func NotoSans(_ type: NotoSansType, size: CGFloat) -> UIFont {
         return UIFont(name: "NotoSansCJKkr-\(type.rawValue)", size: size)!
+    }
+    
+    static func GmarketSans(_ type: GmarketSansType, size: CGFloat) -> UIFont {
+        return UIFont(name: "GmarketSans\(type.rawValue)", size: size)!
     }
     
 }
