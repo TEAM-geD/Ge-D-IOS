@@ -17,6 +17,7 @@ class HeartViewController: UIViewController {
         heartTableView.dataSource = self
         heartTableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
     }
+    let exImg = ["imgHomeProject01", "imgHomeProject02", "imgHomeProject03", "imgHomeProject04", "imgHomeProject05", "imgHomeProject06"]
     override func viewWillAppear(_ animated: Bool) {
     }
 
@@ -25,7 +26,7 @@ class HeartViewController: UIViewController {
 }
 extension HeartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,6 +34,7 @@ extension HeartViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         cell.layer.cornerRadius = 10
+        cell.projectImgView.image = UIImage(named: exImg[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

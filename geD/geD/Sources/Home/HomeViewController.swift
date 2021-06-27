@@ -16,6 +16,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
     @IBOutlet weak var heartButton: UIButton!
+    let exImg = ["imgHomeProject01", "imgHomeProject02", "imgHomeProject03", "imgHomeProject04", "imgHomeProject05", "imgHomeProject06"]
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.delegate = self
@@ -56,7 +57,7 @@ class HomeViewController: BaseViewController {
 }
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,10 +65,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
         cell.layer.cornerRadius = 10
+        cell.heartImgView.image = UIImage()
+        cell.projectImgView.image = UIImage(named: exImg[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("셀 클릭")
+        guard let DetailVC = self.storyboard?.instantiateViewController(identifier: "HomeDetailViewController") else {
+            return
+        }
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(DetailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

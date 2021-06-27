@@ -9,6 +9,8 @@ import UIKit
 
 class HomeCell: UICollectionViewCell {
 
+    @IBOutlet weak var projectImgView: UIImageView!
+    @IBOutlet weak var heartImgView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
 

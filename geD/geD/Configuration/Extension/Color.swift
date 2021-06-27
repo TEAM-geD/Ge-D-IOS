@@ -27,4 +27,5 @@ extension UIColor {
     class var subSoftPurple: UIColor { UIColor(hex: 0x8D6Cf8) }
     class var subMediumPurple: UIColor { UIColor(hex: 0x9262Fc) }
     class var subDeepPurple: UIColor { UIColor(hex: 0x7D5Cff) }
+    class var bluePurple: UIColor { UIColor(red: 78.0 / 255.0, green: 3.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)}
 }
