@@ -14,6 +14,10 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var noUploadProjectView: UIView!
     @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var myProjectLabel: UILabel!
+    @IBOutlet weak var myNoProjectView: UIView!
+    @IBOutlet weak var projectSegmented: CustomSegmentedControl!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +25,14 @@ class MyPageViewController: BaseViewController {
         contentView.backgroundColor = UIColor(hex: 0x2B2B2B)
         profileImageView.layer.cornerRadius = 20
         noUploadProjectView.layer.cornerRadius = 10
+        myNoProjectView.layer.cornerRadius = 10
         
         leftBarButtonItemLayout()
         rightBarButtonItemsLayout()
         
+        projectSegmented.setButtonTitles(buttonTitles: ["전체","모집중","진행중","마감"])
+        
+        projectSegmented.backgroundColor = .clear
     }
     
     func leftBarButtonItemLayout() {
