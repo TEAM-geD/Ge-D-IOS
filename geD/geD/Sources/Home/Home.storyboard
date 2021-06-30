@@ -137,7 +137,7 @@
         <!--Heart View Controller-->
         <scene sceneID="U4W-cT-bPG">
             <objects>
-                <viewController storyboardIdentifier="HeartViewController" id="DWd-Nv-W7F" customClass="HeartViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeartViewController" hidesBottomBarWhenPushed="YES" id="DWd-Nv-W7F" customClass="HeartViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x5f-ve-Nvr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,7 +184,7 @@
         <!--Home Detail View Controller-->
         <scene sceneID="kKe-r1-fX4">
             <objects>
-                <viewController storyboardIdentifier="HomeDetailViewController" id="XRg-ZU-SzC" customClass="HomeDetailViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeDetailViewController" hidesBottomBarWhenPushed="YES" id="XRg-ZU-SzC" customClass="HomeDetailViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsh-iX-Ho0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
         <!--Pop Up View Controller-->
         <scene sceneID="imv-vL-bnn">
             <objects>
-                <viewController storyboardIdentifier="PopUpViewController" id="gZZ-XX-tsD" customClass="PopUpViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopUpViewController" hidesBottomBarWhenPushed="YES" id="gZZ-XX-tsD" customClass="PopUpViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Zq-jm-PjH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
