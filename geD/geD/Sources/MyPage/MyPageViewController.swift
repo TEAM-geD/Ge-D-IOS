@@ -43,17 +43,14 @@ class MyPageViewController: BaseViewController {
     }
     
     func rightBarButtonItemsLayout() {
-        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "icMypageMore"), style: .plain, target: self, action: nil)
+        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "icMypageMore"), style: .plain, target: self, action: #selector(pressedSetting))
         self.navigationItem.rightBarButtonItem = settingBarButtonItem
     }
     
-//    @IBAction func logoutButtonPressed(_ sender: UIButton) {
-//        if isLogin() {
-//            KeychainSwift().delete("jwtToken")
-//        }
-//
-//        goToLogin()
-//    }
-
-
+    @objc func pressedSetting() {
+        let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+        let settingViewController = storyboard.instantiateViewController(identifier: "SettingViewController")
+        self.navigationController?.pushViewController(settingViewController, animated: true)
+    }
+    
 }

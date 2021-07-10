@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.titleTextAttributes = [
             .font : UIFont.systemFont(ofSize: 16, weight: .semibold),
-            .foregroundColor : UIColor.black
+            .foregroundColor : UIColor.white
         ]
     }
     

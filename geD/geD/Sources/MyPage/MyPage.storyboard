@@ -421,6 +421,40 @@
             </objects>
             <point key="canvasLocation" x="1213.0434782608697" y="81.696428571428569"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="BsJ-40-bvW">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" extendedLayoutIncludesOpaqueBars="YES" id="uY8-n2-bmu" customClass="SettingViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dtD-hB-BQg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m0q-Uj-zLs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Skt-1Y-I2x"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m0q-Uj-zLs" firstAttribute="top" secondItem="Skt-1Y-I2x" secondAttribute="top" id="53w-iU-mGv"/>
+                            <constraint firstItem="m0q-Uj-zLs" firstAttribute="leading" secondItem="Skt-1Y-I2x" secondAttribute="leading" id="6TE-dn-Qwu"/>
+                            <constraint firstItem="m0q-Uj-zLs" firstAttribute="trailing" secondItem="Skt-1Y-I2x" secondAttribute="trailing" id="BeF-WQ-zis"/>
+                            <constraint firstItem="m0q-Uj-zLs" firstAttribute="bottom" secondItem="dtD-hB-BQg" secondAttribute="bottom" id="kMK-Mu-vmK"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="m0q-Uj-zLs" id="4hA-N2-VVg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K05-tV-hWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001.449275362319" y="81.696428571428569"/>
+        </scene>
         <!--마이페이지-->
         <scene sceneID="Gzx-RG-YVu">
             <objects>
