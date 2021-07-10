@@ -36,12 +36,23 @@ extension UIFont {
         case bold = "Bold"
     }
     
+    public enum AppleSDGothicNeoType: String {
+        case bold = "Bold"
+        case medium = "Medium"
+        case semibold = "SemiBold"
+        case regular = "Regular"
+    }
+    
     static func NotoSans(_ type: NotoSansType, size: CGFloat) -> UIFont {
         return UIFont(name: "NotoSansCJKkr-\(type.rawValue)", size: size)!
     }
     
     static func GmarketSans(_ type: GmarketSansType, size: CGFloat) -> UIFont {
         return UIFont(name: "GmarketSans\(type.rawValue)", size: size)!
+    }
+    
+    static func AppleSDGothicNeo(_ type: AppleSDGothicNeoType, size: CGFloat) -> UIFont {
+        return UIFont(name: "AppleSDGothicNeo-\(type.rawValue)", size: size)!
     }
     
 }
