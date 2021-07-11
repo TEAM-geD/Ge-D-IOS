@@ -59,6 +59,15 @@ class SettingViewController: BaseViewController {
     }
     
     @objc func logoutButtonPressed() {
+        let logoutVC = CustomAlertViewController("로그아웃 하시겠습니까?", "")
+        logoutVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        logoutVC.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        logoutVC.doneButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        
+        self.present(logoutVC, animated: true, completion: nil)
+    }
+    
+    @objc func logout() {
         if isLogin() {
             KeychainSwift().delete("jwtToken")
         }
