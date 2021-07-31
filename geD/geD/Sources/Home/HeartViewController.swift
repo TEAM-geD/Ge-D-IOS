@@ -10,15 +10,25 @@ import UIKit
 class HeartViewController: UIViewController {
 
     @IBOutlet weak var heartTableView: UICollectionView!
+    var projectInfo: [projectInfo?] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationSetting()
         heartTableView.delegate = self
         heartTableView.dataSource = self
         heartTableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
+        ProjectDataManager().heartListInquire(vc: self)
     }
     let exImg = ["imgHomeProject01", "imgHomeProject02", "imgHomeProject03", "imgHomeProject04", "imgHomeProject05", "imgHomeProject06"]
     override func viewWillAppear(_ animated: Bool) {
+    }
+    func didSuccessReq(result: [projectInfo?]) {
+        projectInfo = result
+        heartTableView.reloadData()
+    }
+    func failToReq(message: String) {
+        self.presentAlert(title: message)
     }
 
     
@@ -26,7 +36,7 @@ class HeartViewController: UIViewController {
 }
 extension HeartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return projectInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

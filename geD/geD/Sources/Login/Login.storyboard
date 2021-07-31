@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="Cvq-BZ-WIX">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="Ti7-Gm-ZzA" customClass="LoginViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Ti7-Gm-ZzA" customClass="SplashViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBO-xm-wBB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,39 +42,39 @@
                                 <attributedString key="attributedText">
                                     <fragment content="시작하기를 누르면 ">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="서비스 이용약관,">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="  ">
+                                    <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">개인정보 이용약관, 
-위치정보 이용약관</string>
+                                        <string key="content">개인정보 이용약관
+</string>
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" 동의로 간주합니다.">
+                                    <fragment content="동의로 간주합니다.">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="11" name="AppleSDGothicNeo-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -111,34 +111,167 @@
         <!--Tutorial View Controller-->
         <scene sceneID="T4m-1B-xGM">
             <objects>
-                <viewController id="Slr-ka-FFu" customClass="TutorialViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Slr-ka-FFu" customClass="TutorialViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pi1-wi-qpt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgTutorial01" translatesAutoresizingMaskIntoConstraints="NO" id="exU-JB-Eqd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvy-8f-cgA">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                            </imageView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-WA-tms">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="390" id="mnU-7s-f6j"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pnF-WA-tms" firstAttribute="bottom" secondItem="ba0-cK-5c2" secondAttribute="bottom" id="Gd9-EO-1M3"/>
+                                    <constraint firstItem="pnF-WA-tms" firstAttribute="top" secondItem="ba0-cK-5c2" secondAttribute="top" id="HJR-aO-iwe"/>
+                                    <constraint firstItem="pnF-WA-tms" firstAttribute="leading" secondItem="ba0-cK-5c2" secondAttribute="leading" id="Udt-QJ-UVm"/>
+                                    <constraint firstItem="pnF-WA-tms" firstAttribute="height" secondItem="Yiv-2O-oHF" secondAttribute="height" id="XXn-ub-unb"/>
+                                    <constraint firstItem="pnF-WA-tms" firstAttribute="trailing" secondItem="ba0-cK-5c2" secondAttribute="trailing" id="kL8-lU-E34"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ba0-cK-5c2"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Yiv-2O-oHF"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qV8-VG-G2c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="exU-JB-Eqd" firstAttribute="leading" secondItem="qV8-VG-G2c" secondAttribute="leading" id="Cs4-CZ-5Md"/>
-                            <constraint firstItem="exU-JB-Eqd" firstAttribute="top" secondItem="pi1-wi-qpt" secondAttribute="top" id="Dld-LW-HQu"/>
-                            <constraint firstAttribute="trailing" secondItem="exU-JB-Eqd" secondAttribute="trailing" id="ITS-AW-sP9"/>
-                            <constraint firstAttribute="bottom" secondItem="exU-JB-Eqd" secondAttribute="bottom" id="sYb-a4-GpZ"/>
+                            <constraint firstItem="Rvy-8f-cgA" firstAttribute="bottom" secondItem="pi1-wi-qpt" secondAttribute="bottom" id="6QW-yN-IQa"/>
+                            <constraint firstItem="Rvy-8f-cgA" firstAttribute="trailing" secondItem="qV8-VG-G2c" secondAttribute="trailing" id="Dj6-Xc-Zhi"/>
+                            <constraint firstItem="Rvy-8f-cgA" firstAttribute="top" secondItem="pi1-wi-qpt" secondAttribute="top" id="Hq7-bK-ulV"/>
+                            <constraint firstItem="Rvy-8f-cgA" firstAttribute="leading" secondItem="qV8-VG-G2c" secondAttribute="leading" id="qPk-0y-pyy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e8m-NY-KZR">
                         <barButtonItem key="rightBarButtonItem" title="Skip" id="LvP-kB-cx1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Gxx-UT-9a1" kind="show" id="J4d-Ho-obx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="myView" destination="pnF-WA-tms" id="7d0-JW-K6t"/>
+                        <outlet property="myViewWidthConstraint" destination="mnU-7s-f6j" id="NVH-q1-2Hc"/>
+                        <outlet property="nextBarButtonItem" destination="LvP-kB-cx1" id="Yps-6V-Kzu"/>
+                        <outlet property="scrollView" destination="Rvy-8f-cgA" id="m2V-2E-KxN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAc-y4-845" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1523.0769230769231" y="71.090047393364927"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="V3m-zX-tZ9">
+            <objects>
+                <viewController id="Gxx-UT-9a1" customClass="LoginViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="45e-iN-Jep">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSplash" translatesAutoresizingMaskIntoConstraints="NO" id="sib-Mb-gKo">
+                                <rect key="frame" x="-1" y="-1" width="392" height="846"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNS계정으로 간편 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyY-s3-rDd">
+                                <rect key="frame" x="122.66666666666669" y="598" width="145" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-HB-jCq">
+                                <rect key="frame" x="155" y="625" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9wC-j8-Ejt"/>
+                                    <constraint firstAttribute="height" constant="80" id="jS3-5B-OD9"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="icLoginNaverBright46Dp"/>
+                                <connections>
+                                    <action selector="naverLoginButtonPressed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="wz8-rx-Otc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-e2-aaD">
+                                <rect key="frame" x="235" y="625" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="8qu-K5-g5d"/>
+                                    <constraint firstAttribute="width" constant="80" id="GcN-ta-6rv"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="icLoginAppleBright46Dp"/>
+                                <connections>
+                                    <action selector="appleLoginButtonPressed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="zzS-7a-xZp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-iP-MCn">
+                                <rect key="frame" x="75" y="625" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0h9-Vk-RUE"/>
+                                    <constraint firstAttribute="height" constant="80" id="MAT-TH-2Zc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="icLoginKakaoBright46Dp"/>
+                                <connections>
+                                    <action selector="kakaoLoginButtonPresed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="XDN-eu-gbo"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgH-nA-Hzq">
+                                <rect key="frame" x="42.666666666666657" y="619" width="76" height="0.66666666666662877"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="MI0-GE-eV5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-CW-gzW">
+                                <rect key="frame" x="271.66666666666669" y="619" width="59.666666666666686" height="0.66666666666662877"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="bnd-Rr-NHL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opj-dw-tqa">
+                                <rect key="frame" x="133" y="720" width="124" height="27"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <state key="normal" title="로그인 없이 바로 시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="withoutLoginButtonPressed:" destination="Gxx-UT-9a1" eventType="touchUpInside" id="AJm-EQ-Ynv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y97-43-LoT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bh6-HB-jCq" firstAttribute="top" secondItem="pyY-s3-rDd" secondAttribute="bottom" constant="10" id="49r-xw-0Gd"/>
+                            <constraint firstItem="jgk-iP-MCn" firstAttribute="top" secondItem="pyY-s3-rDd" secondAttribute="bottom" constant="10" id="5Jf-4B-OUN"/>
+                            <constraint firstAttribute="bottom" secondItem="xgH-nA-Hzq" secondAttribute="bottom" constant="224.5" id="70Q-lx-nuJ"/>
+                            <constraint firstItem="sib-Mb-gKo" firstAttribute="leading" secondItem="45e-iN-Jep" secondAttribute="leading" constant="-1" id="Ai3-7Q-y39"/>
+                            <constraint firstItem="opj-dw-tqa" firstAttribute="top" secondItem="bh6-HB-jCq" secondAttribute="bottom" constant="15" id="EKX-Iy-GU6"/>
+                            <constraint firstItem="Y97-43-LoT" firstAttribute="trailing" secondItem="sib-Mb-gKo" secondAttribute="trailing" constant="-1" id="L1n-kR-knZ"/>
+                            <constraint firstAttribute="bottom" secondItem="sib-Mb-gKo" secondAttribute="bottom" constant="-1" id="NiG-g9-nvh"/>
+                            <constraint firstItem="opj-dw-tqa" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="OaR-SP-Z0d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dHw-CW-gzW" secondAttribute="trailing" constant="42.700000000000003" id="Tnd-iZ-ofg"/>
+                            <constraint firstItem="xgH-nA-Hzq" firstAttribute="leading" secondItem="45e-iN-Jep" secondAttribute="leading" constant="42.700000000000003" id="Wug-k7-4yc"/>
+                            <constraint firstItem="pyY-s3-rDd" firstAttribute="leadingMargin" secondItem="xgH-nA-Hzq" secondAttribute="trailing" constant="12" id="hWC-Yg-sPq"/>
+                            <constraint firstItem="i6U-e2-aaD" firstAttribute="top" secondItem="pyY-s3-rDd" secondAttribute="bottom" constant="10" id="lyp-M9-YU6"/>
+                            <constraint firstItem="pyY-s3-rDd" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="md3-Tl-5Ls"/>
+                            <constraint firstAttribute="bottom" secondItem="dHw-CW-gzW" secondAttribute="bottom" constant="224.5" id="nd7-lE-mh4"/>
+                            <constraint firstItem="sib-Mb-gKo" firstAttribute="top" secondItem="45e-iN-Jep" secondAttribute="top" constant="-1" id="oHr-su-5e3"/>
+                            <constraint firstItem="bh6-HB-jCq" firstAttribute="centerX" secondItem="45e-iN-Jep" secondAttribute="centerX" id="rr0-Yh-h3R"/>
+                            <constraint firstItem="bh6-HB-jCq" firstAttribute="leading" secondItem="jgk-iP-MCn" secondAttribute="trailing" id="tfe-Tp-8Ou"/>
+                            <constraint firstAttribute="bottom" secondItem="opj-dw-tqa" secondAttribute="bottom" constant="97" id="xES-fh-H6U"/>
+                            <constraint firstItem="dHw-CW-gzW" firstAttribute="leading" secondItem="pyY-s3-rDd" secondAttribute="trailingMargin" constant="12" id="xSJ-7o-x94"/>
+                            <constraint firstItem="i6U-e2-aaD" firstAttribute="leading" secondItem="bh6-HB-jCq" secondAttribute="trailing" id="xdG-3r-bEy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="K7x-h9-a5O"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spI-Jw-Yjs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2381.5384615384614" y="71.800947867298575"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3nx-cT-AeG">
@@ -161,8 +294,10 @@
     </scenes>
     <resources>
         <image name="126" width="304" height="42"/>
+        <image name="icLoginAppleBright46Dp" width="80" height="80"/>
+        <image name="icLoginKakaoBright46Dp" width="79" height="80"/>
+        <image name="icLoginNaverBright46Dp" width="80" height="80"/>
         <image name="imgSplash" width="375" height="812"/>
-        <image name="imgTutorial01" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

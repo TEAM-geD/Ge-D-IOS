@@ -6,24 +6,54 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class MyPageViewController: BaseViewController {
 
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var noUploadProjectView: UIView!
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var myProjectLabel: UILabel!
+    @IBOutlet weak var myNoProjectView: UIView!
+    @IBOutlet weak var projectSegmented: CustomSegmentedControl!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        contentView.backgroundColor = UIColor(hex: 0x2B2B2B)
+        profileImageView.layer.cornerRadius = 20
+        noUploadProjectView.layer.cornerRadius = 10
+        myNoProjectView.layer.cornerRadius = 10
+        
+        leftBarButtonItemLayout()
+        rightBarButtonItemsLayout()
+        
+        projectSegmented.setButtonTitles(buttonTitles: ["전체","모집중","진행중","마감"])
+        
+        projectSegmented.backgroundColor = .clear
     }
     
+    func leftBarButtonItemLayout() {
+        let myPageBarButtonItem = UIBarButtonItem(image: UIImage(named: "imgMypage")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        myPageBarButtonItem.isEnabled = false
+        self.navigationItem.leftBarButtonItem = myPageBarButtonItem
     }
-    */
+    
+    func rightBarButtonItemsLayout() {
+        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "icMypageMore"), style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = settingBarButtonItem
+    }
+    
+//    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+//        if isLogin() {
+//            KeychainSwift().delete("jwtToken")
+//        }
+//
+//        goToLogin()
+//    }
+
 
 }

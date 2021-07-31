@@ -11,6 +11,10 @@ class HomeCell: UICollectionViewCell {
 
     @IBOutlet weak var projectImgView: UIImageView!
     @IBOutlet weak var heartImgView: UIImageView!
+    @IBOutlet weak var projectNameTextView: UITextView!
+    @IBOutlet weak var userInfoLb: UILabel!
+    @IBOutlet weak var userProfileImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

@@ -1,183 +1,161 @@
 //
-//  UIViewController.swift
+//  LoginViewController.swift
 //  geD
 //
-//  Created by 김민순 on 2021/05/24.
+//  Created by 김민순 on 2021/06/07.
 //
 
 import UIKit
-import SnapKit
+import KakaoSDKUser
+import NaverThirdPartyLogin
+import KeychainSwift
+import AuthenticationServices
 
 class LoginViewController: BaseViewController {
-    @IBOutlet weak var termsLabel: UILabel!
-    var containerView = UIView()
-    var slideUpView = UIView()
-    var closeImageView = UIImageView()
-    var termsTitleLable = UILabel()
-    var slideUpViewHeight: CGFloat = 0.0
-    var firstTermsContentLabel = UILabel()
-    let terms = Terms()
+
+    let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
-        slideUpViewHeight = Device.height * 0.86
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
-        termsLabel.addGestureRecognizer(tap)
-        
+        naverLoginInstance?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.navigationBar.isTransparent = true
+        self.navigationItem.hidesBackButton = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.navigationController?.navigationBar.isTransparent = false
-    }
-    
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
-        let termsView = UIView()
-        
-        slideUpView.backgroundColor = UIColor.white.withAlphaComponent(0)
-        
-        let window = self.view.window
-        containerView.backgroundColor = UIColor.black.withAlphaComponent(0)
-        containerView.frame = self.view.frame
-        
-        window?.addSubview(containerView)
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,
-                       options: .curveEaseInOut, animations: {
-                        self.containerView.alpha = 0
-                       }, completion: nil)
-        
-        slideUpView.frame = CGRect(x: 0, y: Device.height, width: Device.width, height: slideUpViewHeight)
-        closeImageView.frame = CGRect(x: 0, y: slideUpView.bounds.minY, width: Device.width, height: Device.height * 0.06)
-        closeImageView.image = UIImage(named: "277.png")
-        
-        slideUpView.addSubview(closeImageView)
-        termsView.frame = CGRect(x: 0, y: closeImageView.bounds.maxY, width: Device.width, height: slideUpViewHeight - closeImageView.bounds.height)
-        termsView.backgroundColor = .white
-        slideUpView.addSubview(termsView)
-        window?.addSubview(slideUpView)
-        
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,
-                       options: .curveEaseInOut, animations: {
-                        self.containerView.alpha = 0
-                        self.slideUpView.frame = CGRect(x: 0, y: Device.height - self.slideUpViewHeight, width: Device.width, height: self.slideUpViewHeight)
-                       }, completion: nil)
-        
-        setUpSlideUpView()
-    }
-    
-    func setUpSlideUpView() {
-        let closeButton = UIButton()
-        let mySegementControl = UISegmentedControl(items: ["서비스", "개인정보", "위치정보"])
-       
-        let terms = Terms()
-        let termsScrollView = UIScrollView()
-        
-        // 세그먼트 컨트롤 추가
-        mySegementControl.frame = CGRect(x: Device.width * 0.05, y: closeImageView.bounds.maxY + 21, width: Device.width * 0.9, height: 32)
-        let titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.black]
-        mySegementControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        mySegementControl.selectedSegmentTintColor = .white
-        mySegementControl.selectedSegmentIndex = 0
-        mySegementControl.backgroundColor = UIColor.init(hex: 0x767680, alpha: 0.12)
-        mySegementControl.addTarget(self, action: #selector(pressSegment), for: UIControl.Event.valueChanged)
-        
-        slideUpView.addSubview(mySegementControl)
-        
-        
-        // 닫기 버튼 추가
-        closeButton.frame = CGRect(x: Device.width * 0.88, y: slideUpView.bounds.minY + 20, width: Device.width * 0.069, height: Device.height * 0.023)
-        closeButton.center.y = closeImageView.bounds.height / 2
-        closeButton.setTitleColor(UIColor(hex: 0x393939), for: .normal)
-        closeButton.setTitle("닫기", for: .normal)
-        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        slideUpView.addSubview(closeButton)
-        
-        closeButton.addTarget(self, action: #selector(LoginViewController.closeButtonPressed), for: .touchUpInside)
-        
-        // 약관 제목 추가
-        termsTitleLable.text = terms.titles[0]
-        termsTitleLable.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        termsTitleLable.textColor = .black
-        slideUpView.addSubview(termsTitleLable)
-        termsTitleLable.snp.makeConstraints { (make) in
-            make.left.equalTo(slideUpView.snp.left).inset(19)
-            make.top.equalTo(closeImageView.snp.bottom).offset(107)
+    @IBAction func kakaoLoginButtonPresed(_ sender: UIButton) {
+        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            if let error = error {
+                print(error)
+                print("Login with Kakao account")
+                self.loginWithKakaoAcount()
+            }
+            else {
+                print("loginWithKakaoTalk() success.")
+//                //do something
+                self.showIndicator()
+                if let oauthToken = oauthToken {
+                    let accessToken = oauthToken.accessToken
+                    LoginDataManager().kakaoLogin(accessToken, viewController: self)
+                }
+                
+                _ = oauthToken
+            }
         }
         
-        // 약관 내용 추가
-        termsScrollView.isScrollEnabled = true
-        termsScrollView.showsVerticalScrollIndicator = true
-        termsScrollView.indicatorStyle = .black
         
-        slideUpView.addSubview(termsScrollView)
-        termsScrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(termsTitleLable.snp.bottom).offset(37)
-            make.left.equalTo(slideUpView.snp.left).offset(19)
-            make.right.equalTo(slideUpView.snp.right).offset(-11)
-            make.bottom.equalTo(slideUpView.snp.bottom).offset(-122)
+    }
+    
+    func loginWithKakaoAcount() {
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+                
+                //do something
+                
+                self.showIndicator()
+                if let oauthToken = oauthToken {
+                    let accessToken = oauthToken.accessToken
+                    LoginDataManager().kakaoLogin(accessToken, viewController: self)
+                }
+
+                _ = oauthToken
+
+            }
+        }
+    }
+    
+    @IBAction func naverLoginButtonPressed(_ sender: UIButton) {
+        naverLoginInstance?.resetToken()
+        naverLoginInstance?.requestThirdPartyLogin()
+    }
+    
+    func getNaverInfo() {
+        guard let isValidAccessToken = naverLoginInstance?.isValidAccessTokenExpireTimeNow() else { return }
+        
+        if !isValidAccessToken {
+            return
+        }
+        
+        guard let accessToken = naverLoginInstance?.accessToken else { return }
+        
+        print("Access Token : \(accessToken)")
+        
+        showIndicator()
+        
+        LoginDataManager().naverLogin(accessToken, viewController: self)
+    }
+    
+    @IBAction func appleLoginButtonPressed(_ sender: UIButton) {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+        controller.performRequests()
+    }
+    
+    @IBAction func withoutLoginButtonPressed(_ sender: UIButton) {
+        showIndicator()
+        goToMain()
+    }
+}
+
+//MARK: - Naver Login
+extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
+    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        print("네이버 액세스 토큰 가져오기 성공!")
+        getNaverInfo()
+    }
+    
+    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+    }
+    
+    func oauth20ConnectionDidFinishDeleteToken() {
+    }
+    
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+        print(error.localizedDescription)
+    }
+    
+    
+}
+
+
+//MARK: - Apple Login
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
             
+            let idToken = credential.identityToken!
+            let tokeStr = String(data: idToken, encoding: .utf8)
+            print("ID Token: \(tokeStr ?? "")")
             
-        }
-        
-        let firstTermsLabel = UILabel()
-        firstTermsLabel.text = "제 1장 총칙"
-        firstTermsLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        firstTermsLabel.textColor = .black
-        termsScrollView.addSubview(firstTermsLabel)
-        
-        firstTermsLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(termsScrollView.snp.top)
-            make.left.equalTo(termsScrollView.snp.left)
-        }
-        
-        firstTermsContentLabel.numberOfLines = 0
-        firstTermsContentLabel.textColor = .black
-        firstTermsContentLabel.textAlignment = .left
-        firstTermsContentLabel.font = UIFont.systemFont(ofSize: 12)
-        firstTermsContentLabel.text = terms.contents[0]
-        
-        termsScrollView.addSubview(firstTermsContentLabel)
-        firstTermsContentLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(firstTermsLabel.snp.bottom).offset(25)
-            make.width.equalToSuperview()
-            make.bottom.equalToSuperview()
+            let email = credential.email
+            
+            let fullName = credential.fullName
+            var fullNameStr: String?
+            if let familyName = fullName?.familyName, let givenName = fullName?.givenName {
+                fullNameStr = familyName + givenName
+            }
+            print(fullNameStr ?? "")
+            
+            let input = LoginInput(userName: fullNameStr, userEmail: email)
+            
+            showIndicator()
+            LoginDataManager().appleLogin(input, tokeStr!, viewController: self)
         }
     }
     
-    @objc func pressSegment(_ sender: UISegmentedControl) {
-        
-        let selIdx: Int = sender.selectedSegmentIndex
-        
-        termsTitleLable.text = terms.titles[selIdx]
-        firstTermsContentLabel.text = terms.contents[selIdx]
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
     }
-    
-    @objc
-    func closeButtonPressed(sender: UIButton) {
-        print("Close button pressed")
-        UIView.animate(withDuration: 0.5,
-                       delay: 0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,
-                       options: .curveEaseInOut, animations: {
-                        self.containerView.alpha = 0
-                        self.slideUpView.frame = CGRect(x: 0, y: Device.height, width: Device.width, height: self.slideUpViewHeight)
-                       }, completion: nil)
-    }
-    
 }

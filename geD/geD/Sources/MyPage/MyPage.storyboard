@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,10 +15,407 @@
                     <view key="view" contentMode="scaleToFill" id="vJo-ZI-Vhd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7s-ll-GBm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAy-p8-bUz" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZB-38-lob" userLabel="Profile View">
+                                                <rect key="frame" x="20" y="20" width="374" height="88"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMembersProfile" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-W7-FUA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="86" id="ic2-ie-O5P"/>
+                                                            <constraint firstAttribute="width" secondItem="3Z4-W7-FUA" secondAttribute="height" multiplier="1:1" id="uGV-Ks-gW3"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김민순" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKE-Uy-Ahk">
+                                                        <rect key="frame" x="96" y="8" width="52" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직군선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-bD-tzZ">
+                                                        <rect key="frame" x="96" y="34" width="49" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMypageInfo" translatesAutoresizingMaskIntoConstraints="NO" id="DV6-2I-8Bl">
+                                                        <rect key="frame" x="148" y="10.5" width="19" height="19"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 소개를 입력해보세요." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtN-24-rew">
+                                                        <rect key="frame" x="96" y="54" width="157" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="3Z4-W7-FUA" firstAttribute="leading" secondItem="jZB-38-lob" secondAttribute="leading" id="6c6-g4-WeI"/>
+                                                    <constraint firstItem="5UA-bD-tzZ" firstAttribute="top" secondItem="UKE-Uy-Ahk" secondAttribute="bottom" constant="2" id="Bse-og-Fr0"/>
+                                                    <constraint firstItem="UKE-Uy-Ahk" firstAttribute="top" secondItem="jZB-38-lob" secondAttribute="top" constant="8" id="GbJ-iH-sue"/>
+                                                    <constraint firstItem="vtN-24-rew" firstAttribute="top" secondItem="5UA-bD-tzZ" secondAttribute="bottom" constant="3" id="Orl-bv-VDt"/>
+                                                    <constraint firstItem="vtN-24-rew" firstAttribute="leading" secondItem="3Z4-W7-FUA" secondAttribute="trailing" constant="10" id="c8m-wC-eff"/>
+                                                    <constraint firstItem="5UA-bD-tzZ" firstAttribute="leading" secondItem="3Z4-W7-FUA" secondAttribute="trailing" constant="10" id="hrD-kv-MK1"/>
+                                                    <constraint firstItem="3Z4-W7-FUA" firstAttribute="top" secondItem="jZB-38-lob" secondAttribute="top" id="k8c-j6-hcR"/>
+                                                    <constraint firstAttribute="height" constant="88" id="mGd-x1-T9Y"/>
+                                                    <constraint firstItem="DV6-2I-8Bl" firstAttribute="centerY" secondItem="UKE-Uy-Ahk" secondAttribute="centerY" id="oL0-dr-efU"/>
+                                                    <constraint firstItem="UKE-Uy-Ahk" firstAttribute="leading" secondItem="3Z4-W7-FUA" secondAttribute="trailing" constant="10" id="p8Y-PD-YC1"/>
+                                                    <constraint firstItem="DV6-2I-8Bl" firstAttribute="leading" secondItem="UKE-Uy-Ahk" secondAttribute="trailing" id="v7L-Sv-ksd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8St-yX-sI5" userLabel="Project View">
+                                                <rect key="frame" x="20" y="133" width="374" height="586"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 올린 프로젝트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xff-ZT-FjC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119" height="20"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1R-Q5-B8O">
+                                                        <rect key="frame" x="0.0" y="27" width="374" height="170"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMypageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="vGS-L8-JYa">
+                                                                <rect key="frame" x="169" y="44" width="36" height="36"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="36" id="IsK-EU-ZiV"/>
+                                                                    <constraint firstAttribute="height" constant="36" id="oDk-Nz-rU3"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-eW-xZS">
+                                                                <rect key="frame" x="0.0" y="89" width="374" height="33.5"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="아직">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="올린">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="프로젝트가">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="없네요">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=". ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="프로젝트를">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="등록하고">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="팀원들을">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="만나보세요">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="!">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="eMk-eW-xZS" firstAttribute="top" secondItem="vGS-L8-JYa" secondAttribute="bottom" constant="9" id="5Ob-D5-mMK"/>
+                                                            <constraint firstAttribute="height" constant="170" id="A6n-Qv-q1C"/>
+                                                            <constraint firstItem="eMk-eW-xZS" firstAttribute="leading" secondItem="g1R-Q5-B8O" secondAttribute="leading" id="EOi-DK-rD4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="eMk-eW-xZS" secondAttribute="trailing" id="WR9-j6-rOm"/>
+                                                            <constraint firstItem="vGS-L8-JYa" firstAttribute="top" secondItem="g1R-Q5-B8O" secondAttribute="top" constant="44" id="Ysu-vP-Uvv"/>
+                                                            <constraint firstItem="vGS-L8-JYa" firstAttribute="centerX" secondItem="g1R-Q5-B8O" secondAttribute="centerX" id="cw6-82-4kd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 프로젝트 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQr-KA-a5z">
+                                                        <rect key="frame" x="0.0" y="227" width="105" height="20"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="785-QI-eLn">
+                                                        <rect key="frame" x="0.0" y="294" width="374" height="170"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMypageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="0gn-Pt-4Yy">
+                                                                <rect key="frame" x="169" y="44" width="36" height="36"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="36" id="8nq-YY-ixt"/>
+                                                                    <constraint firstAttribute="height" constant="36" id="ADD-ac-aub"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6d-Li-Iff">
+                                                                <rect key="frame" x="0.0" y="89" width="374" height="33.5"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="선택한">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <font key="NSOriginalFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="사이드">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <font key="NSOriginalFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="프로젝트가">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <font key="NSOriginalFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="없네요">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <font key="NSOriginalFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=".">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="홈 화면에서 다양한 프로젝트를">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="만나보세요">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                                            <font key="NSOriginalFont" metaFont="system" size="14"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="!">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name="SFPro-Medium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="0gn-Pt-4Yy" firstAttribute="top" secondItem="785-QI-eLn" secondAttribute="top" constant="44" id="1Ky-gz-1n4"/>
+                                                            <constraint firstAttribute="height" constant="170" id="FO6-MH-HJR"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Z6d-Li-Iff" secondAttribute="trailing" id="QwY-Se-jWg"/>
+                                                            <constraint firstItem="Z6d-Li-Iff" firstAttribute="leading" secondItem="785-QI-eLn" secondAttribute="leading" id="UGj-wN-zzs"/>
+                                                            <constraint firstItem="0gn-Pt-4Yy" firstAttribute="centerX" secondItem="785-QI-eLn" secondAttribute="centerX" id="tO2-M6-6wu"/>
+                                                            <constraint firstItem="Z6d-Li-Iff" firstAttribute="top" secondItem="0gn-Pt-4Yy" secondAttribute="bottom" constant="9" id="zcY-bA-6w0"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-IA-Lay" customClass="CustomSegmentedControl" customModule="geD" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="249" width="224" height="35"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="B3E-g2-xG7"/>
+                                                            <constraint firstAttribute="width" constant="224" id="hz9-gF-iae"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="g1R-Q5-B8O" firstAttribute="leading" secondItem="8St-yX-sI5" secondAttribute="leading" id="5Np-di-rfs"/>
+                                                    <constraint firstItem="7xe-IA-Lay" firstAttribute="leading" secondItem="8St-yX-sI5" secondAttribute="leading" id="7fc-0e-JIP"/>
+                                                    <constraint firstItem="g1R-Q5-B8O" firstAttribute="top" secondItem="Xff-ZT-FjC" secondAttribute="bottom" constant="7" id="85Z-vj-5ac"/>
+                                                    <constraint firstItem="Xff-ZT-FjC" firstAttribute="top" secondItem="8St-yX-sI5" secondAttribute="top" id="PJU-7Q-h8e"/>
+                                                    <constraint firstItem="Xff-ZT-FjC" firstAttribute="leading" secondItem="8St-yX-sI5" secondAttribute="leading" id="Qo0-Q9-qdw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="g1R-Q5-B8O" secondAttribute="trailing" id="UAY-E6-yvr"/>
+                                                    <constraint firstItem="RQr-KA-a5z" firstAttribute="top" secondItem="g1R-Q5-B8O" secondAttribute="bottom" constant="30" id="Zta-7h-jF0"/>
+                                                    <constraint firstItem="RQr-KA-a5z" firstAttribute="leading" secondItem="8St-yX-sI5" secondAttribute="leading" id="gi7-c7-irf"/>
+                                                    <constraint firstItem="785-QI-eLn" firstAttribute="leading" secondItem="8St-yX-sI5" secondAttribute="leading" id="hY3-xh-bKw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="785-QI-eLn" secondAttribute="trailing" id="lMt-7N-eHC"/>
+                                                    <constraint firstItem="785-QI-eLn" firstAttribute="top" secondItem="7xe-IA-Lay" secondAttribute="bottom" constant="10" id="ylN-eN-MFa"/>
+                                                    <constraint firstItem="7xe-IA-Lay" firstAttribute="top" secondItem="RQr-KA-a5z" secondAttribute="bottom" constant="2" id="zdq-ld-Tzd"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jZB-38-lob" secondAttribute="trailing" constant="20" id="CbH-hs-QOg"/>
+                                            <constraint firstItem="jZB-38-lob" firstAttribute="top" secondItem="PAy-p8-bUz" secondAttribute="top" constant="20" id="HYc-7o-E8x"/>
+                                            <constraint firstAttribute="trailing" secondItem="8St-yX-sI5" secondAttribute="trailing" constant="20" id="IFj-Yo-6hN"/>
+                                            <constraint firstItem="jZB-38-lob" firstAttribute="leading" secondItem="PAy-p8-bUz" secondAttribute="leading" constant="20" id="P1g-Mu-kba"/>
+                                            <constraint firstItem="8St-yX-sI5" firstAttribute="top" secondItem="jZB-38-lob" secondAttribute="bottom" constant="25" id="jVe-x7-dUI"/>
+                                            <constraint firstItem="8St-yX-sI5" firstAttribute="leading" secondItem="PAy-p8-bUz" secondAttribute="leading" constant="20" id="ocK-EG-OqZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="8St-yX-sI5" secondAttribute="bottom" constant="6" id="pYq-rF-zCH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="trailing" secondItem="zoj-lY-SM9" secondAttribute="trailing" id="BS7-P3-jqQ"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="width" secondItem="zoj-lY-SM9" secondAttribute="width" id="HLU-HG-vPr"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="trailing" secondItem="ZAk-nH-yuA" secondAttribute="trailing" id="eqt-64-UdR"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="top" secondItem="zoj-lY-SM9" secondAttribute="top" id="gJ9-IY-9Pi"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="bottom" secondItem="zoj-lY-SM9" secondAttribute="bottom" id="iLu-te-C6b"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="bottom" secondItem="ZAk-nH-yuA" secondAttribute="bottom" id="j6f-jF-tOb"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="top" secondItem="ZAk-nH-yuA" secondAttribute="top" id="mUz-Yr-KB0"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="leading" secondItem="zoj-lY-SM9" secondAttribute="leading" id="np3-2t-qqr"/>
+                                    <constraint firstItem="PAy-p8-bUz" firstAttribute="leading" secondItem="ZAk-nH-yuA" secondAttribute="leading" id="qj6-H2-26s"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ZAk-nH-yuA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="zoj-lY-SM9"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lFw-nv-iiK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y7s-ll-GBm" firstAttribute="trailing" secondItem="lFw-nv-iiK" secondAttribute="trailing" id="2VY-kx-ixU"/>
+                            <constraint firstItem="Y7s-ll-GBm" firstAttribute="top" secondItem="lFw-nv-iiK" secondAttribute="top" id="GH4-qY-q06"/>
+                            <constraint firstItem="Y7s-ll-GBm" firstAttribute="bottom" secondItem="lFw-nv-iiK" secondAttribute="bottom" id="jbe-3j-fGP"/>
+                            <constraint firstItem="Y7s-ll-GBm" firstAttribute="leading" secondItem="vJo-ZI-Vhd" secondAttribute="leading" id="x8l-CZ-Eji"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9zI-do-GBk"/>
+                    <connections>
+                        <outlet property="contentView" destination="PAy-p8-bUz" id="rso-54-AsF"/>
+                        <outlet property="myNoProjectView" destination="785-QI-eLn" id="FuW-x9-ogi"/>
+                        <outlet property="myProjectLabel" destination="RQr-KA-a5z" id="XLF-hv-D8d"/>
+                        <outlet property="noUploadProjectView" destination="g1R-Q5-B8O" id="HDX-n5-rjb"/>
+                        <outlet property="profileImageView" destination="3Z4-W7-FUA" id="y8K-PO-XWN"/>
+                        <outlet property="profileView" destination="jZB-38-lob" id="Su7-2a-qs1"/>
+                        <outlet property="projectSegmented" destination="7xe-IA-Lay" id="fLX-HI-JmS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imM-rS-vg7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +443,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icMypageDefault" width="36" height="36"/>
+        <image name="icMypageInfo" width="19" height="19"/>
         <image name="icTabMyW" width="19" height="20.5"/>
+        <image name="imgMembersProfile" width="86" height="86"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

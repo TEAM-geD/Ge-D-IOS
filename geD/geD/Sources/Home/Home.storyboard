@@ -23,7 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X6x-Lv-D52">
                                 <rect key="frame" x="0.0" y="145" width="414" height="668"/>
-                                <color key="backgroundColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.1529411765" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nvH-TG-VHE">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -54,49 +54,49 @@
                                     <action selector="heartButtonTouchUpInside:" destination="783-rq-K9i" eventType="touchUpInside" id="da3-cj-m4h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-oo-eZI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-oo-eZI">
                                 <rect key="frame" x="20" y="99" width="58" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="IRD-eP-uoi"/>
                                     <constraint firstAttribute="width" constant="58" id="hAZ-v6-ewE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="ALL">
+                                <state key="normal" image="icHomeAllGray">
                                     <color key="titleColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="icHomeAll"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-b2-igK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-b2-igK">
                                 <rect key="frame" x="83" y="99" width="66.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="lc7-Yv-Noa"/>
                                     <constraint firstAttribute="width" constant="66.599999999999994" id="tep-HA-yO9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="iOS app">
+                                <state key="normal" image="icHomeIosGray">
                                     <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="icHomeIos"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2d-ID-mOf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2d-ID-mOf">
                                 <rect key="frame" x="154.5" y="99" width="66.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="3wf-ht-Jed"/>
                                     <constraint firstAttribute="width" constant="66.599999999999994" id="Tc7-sZ-rQm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="AOS app">
+                                <state key="normal" image="icHomeAosGray">
                                     <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="icHomeIos"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4m-5w-2JB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4m-5w-2JB">
                                 <rect key="frame" x="226" y="99" width="47" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Fb4-jk-uzz"/>
                                     <constraint firstAttribute="width" constant="47" id="IGM-4O-OpL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Web">
+                                <state key="normal" image="icHomeWebGray">
                                     <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="icHomeWeb"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eL3-TU-kph"/>
@@ -380,6 +380,13 @@
     </scenes>
     <resources>
         <image name="icHeart" width="30" height="30"/>
+        <image name="icHomeAll" width="73" height="40"/>
+        <image name="icHomeAllGray" width="58" height="25"/>
+        <image name="icHomeAosGray" width="67" height="25"/>
+        <image name="icHomeIos" width="82" height="40"/>
+        <image name="icHomeIosGray" width="67" height="25"/>
+        <image name="icHomeWeb" width="62" height="40"/>
+        <image name="icHomeWebGray" width="47" height="25"/>
         <image name="icPopupCancle" width="23" height="23"/>
         <image name="icPopupGoogle" width="45" height="45"/>
         <image name="icPopupKakao" width="45" height="45"/>
