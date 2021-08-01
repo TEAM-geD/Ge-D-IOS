@@ -44,11 +44,7 @@ class CustomAlertViewController: UIViewController {
         }
         
         let imageView = UIImageView()
-<<<<<<< Updated upstream
-        imageView.image = UIImage(named: "icPopupNotice")
-=======
         imageView.image = UIImage(named: "icPopupWarning")
->>>>>>> Stashed changes
         imageView.contentMode = .scaleAspectFill
         alertView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
