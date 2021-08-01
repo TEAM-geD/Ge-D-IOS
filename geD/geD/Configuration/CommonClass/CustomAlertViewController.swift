@@ -80,6 +80,8 @@ class CustomAlertViewController: UIViewController {
             contentLabel.text = contentString
             contentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             contentLabel.textColor = UIColor(white: 110.0 / 255.0, alpha: 1.0)
+            contentLabel.textAlignment = .center
+            contentLabel.numberOfLines = 3
         } else {
             contentLabel.snp.makeConstraints { make in
                 make.height.equalTo(0)
