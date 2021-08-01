@@ -6,33 +6,23 @@
 //
 
 import UIKit
+import MessageUI
 import KeychainSwift
 
 class SettingViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
-   
+    
     let settingTitles = ["Push 알림 설정", "앱 버전 정보", "약관 및 정책", "오픈소스 라이브러리", "문의하기"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "설정"
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = true
         
         addFooterView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     func addFooterView() {
@@ -71,23 +61,26 @@ class SettingViewController: BaseViewController {
         if isLogin() {
             KeychainSwift().delete("jwtToken")
         }
-
+        
         goToLogin()
     }
 }
 
-extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
+extension SettingViewController: UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = settingTitles[indexPath.row]
         let image = UIImage(named: "icSettingGo")
         let accessory  = UIImageView(frame:CGRect(x:0, y:0, width:(image?.size.width)!, height:(image?.size.height)!))
         accessory.image = image
-
-        // set the color here
+        
+        // set cell
+        cell.textLabel?.textColor = UIColor.white
+        cell.isUserInteractionEnabled = true
         accessory.tintColor = UIColor.white
         cell.accessoryView = accessory
         cell.backgroundColor = UIColor(hex: 0x2B2B2B)
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -95,4 +88,42 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingTitles.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let settingTitle = settingTitles[indexPath.row]
+        switch settingTitle {
+        case "앱 버전 정보":
+            let versionVC = VersionViewController(Constant.appVersionText)
+            versionVC.title = settingTitle
+            self.navigationController?.pushViewController(versionVC, animated: true)
+        case "오픈소스 라이브러리":
+            let versionVC = VersionViewController(Constant.openSourceText)
+            versionVC.title = settingTitle
+            self.navigationController?.pushViewController(versionVC, animated: true)
+        case "문의하기":
+            if MFMailComposeViewController.canSendMail() {
+                let compseVC = MFMailComposeViewController()
+                compseVC.mailComposeDelegate = self
+                
+                compseVC.setToRecipients([Constant.customerServiceEmail])
+                
+                self.present(compseVC, animated: true, completion: nil)
+                
+            } else {
+                self.presentAlert(title: "메일을 보낼 수 없습니다.")
+            }
+        case "약관 및 정책":
+            let termsVC = TermsViewController()
+            termsVC.title = settingTitle
+            self.navigationController?.pushViewController(termsVC, animated: true)
+        default:
+            return
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -16,7 +16,7 @@
         <!--Splash View Controller-->
         <scene sceneID="Cvq-BZ-WIX">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="Ti7-Gm-ZzA" customClass="SplashViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="Ti7-Gm-ZzA" customClass="SplashViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBO-xm-wBB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +169,7 @@
         <!--Login View Controller-->
         <scene sceneID="V3m-zX-tZ9">
             <objects>
-                <viewController id="Gxx-UT-9a1" customClass="LoginViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Gxx-UT-9a1" customClass="LoginViewController" customModule="geD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="45e-iN-Jep">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -87,6 +87,7 @@ PODS:
     - KakaoSDKAuth (= 2.4.1)
     - KakaoSDKCommon (= 2.4.1)
   - KeychainSwift (19.0.0)
+  - Kingfisher (6.3.0)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
@@ -105,6 +106,7 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKUser
   - KeychainSwift (~> 19.0)
+  - Kingfisher (~> 6.0)
   - naveridlogin-sdk-ios
   - SnapKit
 
@@ -126,6 +128,7 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - KeychainSwift
+    - Kingfisher
     - nanopb
     - naveridlogin-sdk-ios
     - PromisesObjC
@@ -148,11 +151,12 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: 0912aa0c7db051ae8dc07a35395cf644f7728f95
   KakaoSDKUser: 11955811d99d1ff1f1dfd5428afe69937e31ccef
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   naveridlogin-sdk-ios: b9d7c20677981177ed994ecb1c8c2b49f223277d
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: acf315365062089ed798ba7862bab2caa249fd39
+PODFILE CHECKSUM: b9067ded104a704c2a961684f18759df7011badc
 
 COCOAPODS: 1.10.1

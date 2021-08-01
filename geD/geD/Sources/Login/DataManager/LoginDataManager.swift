@@ -21,8 +21,10 @@ class LoginDataManager {
                     // 로그인 성공
                     print(message)
                     print(response.result!.jwt)
+                    print(response.result!.userIdx)
                     let keyChain = KeychainSwift()
                     keyChain.set(response.result!.jwt, forKey: "jwtToken")
+                    keyChain.set(String(response.result!.userIdx), forKey: "userIdx")
                     viewController.goToMain()
                 } else {
                     switch response.code {
@@ -47,8 +49,10 @@ class LoginDataManager {
                     // 로그인 성공
                     print(message)
                     print(response.result!.jwt)
+                    print(response.result!.userIdx)
                     let keyChain = KeychainSwift()
                     keyChain.set(response.result!.jwt, forKey: "jwtToken")
+                    keyChain.set(String(response.result!.userIdx), forKey: "userIdx")
                     viewController.goToMain()
                 } else {
                     switch response.code {
@@ -73,8 +77,10 @@ class LoginDataManager {
                     // 로그인 성공
                     print(message)
                     print(response.result!.jwt)
+                    print(response.result!.userIdx)
                     let keyChain = KeychainSwift()
                     keyChain.set(response.result!.jwt, forKey: "jwtToken")
+                    keyChain.set(String(response.result!.userIdx), forKey: "userIdx")
                     viewController.goToMain()
                 } else {
                     switch response.code {

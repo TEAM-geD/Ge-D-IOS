@@ -20,16 +20,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 //        guard let _ = (scene as? UIWindowScene) else { return }
         
-        let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
-        self.window = UIWindow(windowScene: windowScene)
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            self.window = window
+        }
         
         AutoLoginDataManager().autoLogin(sceneDelegate: self)
-        
-//        self.goToMain()
-//        self.goToLogin()
     }
     
     func goToLogin() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let rootVC = storyboard.instantiateViewController(identifier: Constant.loginNavigationControllerIdentifier)
+        
+        self.window?.rootViewController = rootVC
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func goToSplash() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let rootVC = storyboard.instantiateViewController(identifier: Constant.loginNavigationControllerIdentifier)
         

@@ -58,6 +58,13 @@ class BaseViewController: UIViewController {
     
     func goToLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(identifier: Constant.loginViewControllerIdentifier)
+        
+        changeRootViewController(loginViewController)
+    }
+    
+    func goToSplash() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(identifier: Constant.loginNavigationControllerIdentifier)
         
         changeRootViewController(loginViewController)

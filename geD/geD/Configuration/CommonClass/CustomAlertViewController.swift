@@ -30,14 +30,6 @@ class CustomAlertViewController: UIViewController {
     }
     
     func updateView() {
-        //        let containerView = UIView()
-        //        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeView)))
-        //
-        //        containerView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.4)
-        //        self.view.addSubview(containerView)
-        //        containerView.snp.makeConstraints { make in
-        //            make.edges.equalToSuperview()
-        //        }
         
         self.view.backgroundColor = UIColor(hex: 0x000000, alpha: 0.4)
         
@@ -52,7 +44,11 @@ class CustomAlertViewController: UIViewController {
         }
         
         let imageView = UIImageView()
+<<<<<<< Updated upstream
         imageView.image = UIImage(named: "icPopupNotice")
+=======
+        imageView.image = UIImage(named: "icPopupWarning")
+>>>>>>> Stashed changes
         imageView.contentMode = .scaleAspectFill
         alertView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
@@ -88,6 +84,8 @@ class CustomAlertViewController: UIViewController {
             contentLabel.text = contentString
             contentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             contentLabel.textColor = UIColor(white: 110.0 / 255.0, alpha: 1.0)
+            contentLabel.textAlignment = .center
+            contentLabel.numberOfLines = 3
         } else {
             contentLabel.snp.makeConstraints { make in
                 make.height.equalTo(0)

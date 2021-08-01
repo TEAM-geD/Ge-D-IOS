@@ -16,4 +16,5 @@ target 'geD' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'naveridlogin-sdk-ios'
+  pod 'Kingfisher', '~> 6.0'
 end
