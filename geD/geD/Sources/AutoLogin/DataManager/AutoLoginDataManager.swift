@@ -12,7 +12,8 @@ import KeychainSwift
 
 class AutoLoginDataManager {
     func autoLogin(sceneDelegate: SceneDelegate) {
-        let myKey = KeychainSwift().get("jwtToken")
+        let keychain = KeychainSwift()
+        let myKey = keychain.get("jwtToken")
         let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : myKey ?? ""]
         AF.request("\(Constant.BASE_URL)/users/auto-signin", method: .post, headers: headers).validate().responseDecodable(of: AutoLoginResponse.self) { response in
             switch response.result {
@@ -26,14 +27,19 @@ class AutoLoginDataManager {
                     sceneDelegate.goToMain()
                 } else {
                     switch response.code {
+                    // 비활성화된 유저
+                    case 3021:
+                        keychain.delete("jwtToken")
+                        keychain.delete("userIdx")
+                        sceneDelegate.goToSplash()
                     // JWT 토큰 미입력
                     case 2000:
                         print(message)
-                        sceneDelegate.goToLogin()
+                        sceneDelegate.goToSplash()
                     // JWT 토큰 검증 실패
                     case 2001:
                         print(message)
-                        sceneDelegate.goToLogin()
+                        sceneDelegate.goToSplash()
                     // 데이터베이스 에러
                     default:
                         print(message)

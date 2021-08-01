@@ -71,8 +71,7 @@ extension UIViewController {
         alertSuperview.isHidden = true
     
         let alertLabel = UILabel()
-        alertLabel.font = .NotoSans(.regular, size: 15)
-        alertLabel.textColor = .white
+        alertLabel.font = UIFont.systemFont(ofSize: 20)
         
         self.view.addSubview(alertSuperview)
         alertSuperview.snp.makeConstraints { make in

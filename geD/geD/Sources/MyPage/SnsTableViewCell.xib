@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SnsTableViewCell" rowHeight="49" id="KGk-i7-Jjw" customClass="SnsTableViewCell" customModule="geD" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sL4-DR-fcg">
+                        <rect key="frame" x="20" y="6" width="70" height="35"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG0-m3-Jel">
+                                <rect key="frame" x="10" y="1.5" width="30" height="32"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="선택">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdV-gI-yzo">
+                                <rect key="frame" x="46" y="6.5" width="15" height="22"/>
+                                <state key="normal" image="icMyprofileDropdown"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fdV-gI-yzo" firstAttribute="leading" secondItem="rG0-m3-Jel" secondAttribute="trailing" constant="6" id="Gpp-KK-nAc"/>
+                            <constraint firstAttribute="width" constant="70" id="KS3-4v-MKW"/>
+                            <constraint firstItem="fdV-gI-yzo" firstAttribute="centerY" secondItem="rG0-m3-Jel" secondAttribute="centerY" id="Lf6-BK-bbm"/>
+                            <constraint firstItem="rG0-m3-Jel" firstAttribute="leading" secondItem="sL4-DR-fcg" secondAttribute="leading" constant="10" id="TNJ-SC-hPV"/>
+                            <constraint firstItem="rG0-m3-Jel" firstAttribute="centerY" secondItem="sL4-DR-fcg" secondAttribute="centerY" id="U8Y-0U-Hst"/>
+                            <constraint firstAttribute="height" constant="35" id="lFX-Gu-CfL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uce-qM-Hc6">
+                        <rect key="frame" x="316" y="6" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="G7s-lz-2rd"/>
+                            <constraint firstAttribute="width" secondItem="uce-qM-Hc6" secondAttribute="height" multiplier="1:1" id="L6U-xc-rO1"/>
+                        </constraints>
+                        <state key="normal" image="icMyprofileAdd"/>
+                    </button>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL을 입력해주세요." textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="rZG-x0-15f">
+                        <rect key="frame" x="96" y="6.5" width="214" height="34"/>
+                        <color key="backgroundColor" name="Background Color"/>
+                        <color key="textColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </textField>
+                </subviews>
+                <color key="backgroundColor" name="Background Color"/>
+                <constraints>
+                    <constraint firstItem="uce-qM-Hc6" firstAttribute="leading" secondItem="rZG-x0-15f" secondAttribute="trailing" constant="6" id="9BP-5W-nVE"/>
+                    <constraint firstAttribute="trailing" secondItem="uce-qM-Hc6" secondAttribute="trailing" constant="20" id="Cn5-9v-aLr"/>
+                    <constraint firstItem="rZG-x0-15f" firstAttribute="centerY" secondItem="sL4-DR-fcg" secondAttribute="centerY" id="GJU-fH-ngY"/>
+                    <constraint firstItem="sL4-DR-fcg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="KYW-SC-CVP"/>
+                    <constraint firstAttribute="bottom" secondItem="sL4-DR-fcg" secondAttribute="bottom" constant="6" id="Uq3-PI-oCe"/>
+                    <constraint firstItem="rZG-x0-15f" firstAttribute="leading" secondItem="sL4-DR-fcg" secondAttribute="trailing" constant="6" id="uao-hz-7P2"/>
+                    <constraint firstItem="sL4-DR-fcg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="wtw-XG-76g"/>
+                    <constraint firstItem="uce-qM-Hc6" firstAttribute="centerY" secondItem="sL4-DR-fcg" secondAttribute="centerY" id="xrf-Bi-hVy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="urlTextField" destination="rZG-x0-15f" id="6fy-7d-eOB"/>
+            </connections>
+            <point key="canvasLocation" x="19.565217391304348" y="104.79910714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icMyprofileAdd" width="35" height="35"/>
+        <image name="icMyprofileDropdown" width="15" height="15"/>
+        <namedColor name="Background Color">
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

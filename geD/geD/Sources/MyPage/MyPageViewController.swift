@@ -7,11 +7,15 @@
 
 import UIKit
 import KeychainSwift
+import Kingfisher
 
 class MyPageViewController: BaseViewController {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userJobLabel: UILabel!
+    @IBOutlet weak var userIntroduceLabel: UILabel!
     @IBOutlet weak var noUploadProjectView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var myProjectLabel: UILabel!
@@ -21,6 +25,16 @@ class MyPageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showIndicator()
+        
+        if let accessToken = KeychainSwift().get("jwtToken"), let userIdx = KeychainSwift().get("userIdx") {
+            UserInfoDataManager().getUserInfo(accessToken, userIdx, viewController: self)
+        } else {
+            dismissIndicator()
+        }
+        
+        userNameLabel.isUserInteractionEnabled = true
+        userNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.moveUserInfoPage)))
         
         contentView.backgroundColor = UIColor(hex: 0x2B2B2B)
         profileImageView.layer.cornerRadius = 20
@@ -33,6 +47,30 @@ class MyPageViewController: BaseViewController {
         projectSegmented.setButtonTitles(buttonTitles: ["전체","모집중","진행중","마감"])
         
         projectSegmented.backgroundColor = .clear
+    }
+    
+    func updateUI(_ userInfo: UserInfoResult) {
+        DispatchQueue.main.async {
+            self.userNameLabel.text = userInfo.userName
+            if let introduce = userInfo.introduce {
+                self.userIntroduceLabel.text = introduce
+            }
+            if let profileImageUrl = userInfo.profileImageUrl {
+                let downsamplingProcessor = DownsamplingImageProcessor(size: CGSize(width: 86, height: 86))
+                let roundCornerProcessor = RoundCornerImageProcessor(cornerRadius: 20)
+                self.profileImageView.kf.setImage(
+                    with: URL(string: profileImageUrl),
+                    options: [
+                        .processor(downsamplingProcessor |> roundCornerProcessor),
+                        .scaleFactor(UIScreen.main.scale),
+                        .cacheOriginalImage
+                    ]
+                )
+            }
+            if let userJob = userInfo.userJob {
+                self.userJobLabel.text = userJob
+            }
+        }
     }
     
     func leftBarButtonItemLayout() {
@@ -53,4 +91,13 @@ class MyPageViewController: BaseViewController {
         self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
+    @objc func moveUserInfoPage() {
+        if isLogin() {
+            let storyBoard = UIStoryboard(name: "MyPage", bundle: nil)
+            let infoVC = storyBoard.instantiateViewController(withIdentifier: Constant.userInfoViewControllerIdentifier)
+            self.navigationController?.pushViewController(infoVC, animated: true)
+        } else {
+            goToLogin()
+        }
+    }
 }

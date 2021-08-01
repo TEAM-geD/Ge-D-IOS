@@ -13,7 +13,7 @@ class SplashViewController: BaseViewController {
     var containerView = UIView()
     var slideUpView = UIView()
     var closeImageView = UIImageView()
-    var termsTitleLable = UILabel()
+    var termsTitleLabel = UILabel()
     var slideUpViewHeight: CGFloat = 0.0
     var firstTermsContentLabel = UILabel()
     let terms = Terms()
@@ -111,11 +111,11 @@ class SplashViewController: BaseViewController {
         closeButton.addTarget(self, action: #selector(SplashViewController.closeButtonPressed), for: .touchUpInside)
         
         // 약관 제목 추가
-        termsTitleLable.text = terms.titles[0]
-        termsTitleLable.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        termsTitleLable.textColor = .black
-        slideUpView.addSubview(termsTitleLable)
-        termsTitleLable.snp.makeConstraints { (make) in
+        termsTitleLabel.text = terms.titles[0]
+        termsTitleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        termsTitleLabel.textColor = .black
+        slideUpView.addSubview(termsTitleLabel)
+        termsTitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(slideUpView.snp.left).inset(19)
             make.top.equalTo(closeImageView.snp.bottom).offset(107)
         }
@@ -127,7 +127,7 @@ class SplashViewController: BaseViewController {
         
         slideUpView.addSubview(termsScrollView)
         termsScrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(termsTitleLable.snp.bottom).offset(37)
+            make.top.equalTo(termsTitleLabel.snp.bottom).offset(37)
             make.left.equalTo(slideUpView.snp.left).offset(19)
             make.right.equalTo(slideUpView.snp.right).offset(-11)
             make.bottom.equalTo(slideUpView.snp.bottom).offset(-122)
@@ -164,7 +164,7 @@ class SplashViewController: BaseViewController {
         
         let selIdx: Int = sender.selectedSegmentIndex
         
-        termsTitleLable.text = terms.titles[selIdx]
+        termsTitleLabel.text = terms.titles[selIdx]
         firstTermsContentLabel.text = terms.contents[selIdx]
     }
     
