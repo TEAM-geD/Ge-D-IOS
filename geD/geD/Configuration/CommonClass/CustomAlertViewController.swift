@@ -44,7 +44,7 @@ class CustomAlertViewController: UIViewController {
         }
         
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "exclamationmark.octagon")
+        imageView.image = UIImage(named: "icPopupWarning")
         imageView.contentMode = .scaleAspectFill
         alertView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
