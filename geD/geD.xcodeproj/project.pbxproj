@@ -286,7 +286,6 @@
 				6D441F9B265BE08600A2391C /* Login.storyboard */,
 				6D441F9E265BE0B400A2391C /* SplashViewController.swift */,
 				6D720BDC266D2E1800FFD073 /* LoginViewController.swift */,
-				6D8EE933266B95D2009A85D1 /* Terms.swift */,
 				6DB0007026655E0F00E1F4F3 /* Tutorial */,
 			);
 			path = Login;
@@ -299,6 +298,7 @@
 				6D7611202666180B004D953B /* Device.swift */,
 				6D7C9C4F268A1454000DCBE2 /* CustomSegmentedControl.swift */,
 				6D4610E0269AE00D0052FFA9 /* CustomAlertViewController.swift */,
+				6D8EE933266B95D2009A85D1 /* Terms.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";

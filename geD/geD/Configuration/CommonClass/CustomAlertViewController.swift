@@ -30,14 +30,6 @@ class CustomAlertViewController: UIViewController {
     }
     
     func updateView() {
-        //        let containerView = UIView()
-        //        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeView)))
-        //
-        //        containerView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.4)
-        //        self.view.addSubview(containerView)
-        //        containerView.snp.makeConstraints { make in
-        //            make.edges.equalToSuperview()
-        //        }
         
         self.view.backgroundColor = UIColor(hex: 0x000000, alpha: 0.4)
         
