@@ -72,6 +72,8 @@
 		EEACEC7A2696BA3700439005 /* ProjectDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACEC792696BA3700439005 /* ProjectDataManager.swift */; };
 		EEACEC7D2696BB7F00439005 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACEC7C2696BB7F00439005 /* ProjectResponse.swift */; };
 		EEC431452681AE2300E54AC1 /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC431442681AE2300E54AC1 /* HeartViewController.swift */; };
+		EEEC52C626BD38460030401D /* ProjectRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC52C526BD38450030401D /* ProjectRegisterViewController.swift */; };
+		EEEC52C826BD76970030401D /* ProjectCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC52C726BD76970030401D /* ProjectCompleteViewController.swift */; };
 		EEFC4C8C269180C200131D70 /* KakaoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFC4C8B269180C200131D70 /* KakaoKey.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +148,8 @@
 		EEACEC792696BA3700439005 /* ProjectDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataManager.swift; sourceTree = "<group>"; };
 		EEACEC7C2696BB7F00439005 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
 		EEC431442681AE2300E54AC1 /* HeartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartViewController.swift; sourceTree = "<group>"; };
+		EEEC52C526BD38450030401D /* ProjectRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRegisterViewController.swift; sourceTree = "<group>"; };
+		EEEC52C726BD76970030401D /* ProjectCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCompleteViewController.swift; sourceTree = "<group>"; };
 		EEFC4C8B269180C200131D70 /* KakaoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +249,8 @@
 			children = (
 				6D25442C2664C23A008C1701 /* Project.storyboard */,
 				6D25442F2664C252008C1701 /* ProjectViewController.swift */,
+				EEEC52C526BD38450030401D /* ProjectRegisterViewController.swift */,
+				EEEC52C726BD76970030401D /* ProjectCompleteViewController.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				6D441F7E265ABD1300A2391C /* UINavgationBar.swift in Sources */,
 				EE34F7C326A45DB300AAA430 /* ReferenceDetailResponse.swift in Sources */,
 				6DC6CB9C26518A9300E0BF29 /* AppDelegate.swift in Sources */,
+				EEEC52C626BD38460030401D /* ProjectRegisterViewController.swift in Sources */,
 				EE28384E2685BE37002AB7F2 /* HomeDetailViewController.swift in Sources */,
 				EEACEC7A2696BA3700439005 /* ProjectDataManager.swift in Sources */,
 				6D6CE77A2677972E007FA5FB /* LoginResponse.swift in Sources */,
@@ -637,6 +644,7 @@
 				EE2838532685C34C002AB7F2 /* DetailImageCell.swift in Sources */,
 				6D6CE7782677968C007FA5FB /* LoginInput.swift in Sources */,
 				EE34F7C626A4623F00AAA430 /* ReferenceHeartViewController.swift in Sources */,
+				EEEC52C826BD76970030401D /* ProjectCompleteViewController.swift in Sources */,
 				6D2544362664C27C008C1701 /* MemberViewController.swift in Sources */,
 				6D441F93265BDF7B00A2391C /* BaseViewController.swift in Sources */,
 				6D25443C2664C2AE008C1701 /* MyPageViewController.swift in Sources */,

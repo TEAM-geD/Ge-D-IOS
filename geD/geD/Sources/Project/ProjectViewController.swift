@@ -8,22 +8,24 @@
 import UIKit
 
 class ProjectViewController: BaseViewController {
-
+    @IBOutlet weak var projectInfoView: UIView!
+    @IBOutlet weak var textFiledView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewSetting()
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    @IBAction func backButtonTouchUpInside(_ sender: UIBarButtonItem) {
+        goToMain()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension ProjectViewController {
+    func viewSetting() {
+        self.projectInfoView.layer.cornerRadius = 12
+        self.textFiledView.layer.cornerRadius = 10
+        self.textFiledView.layer.borderColor = UIColor(red: 224, green: 224, blue: 224, alpha: 1.0).cgColor
+        self.textFiledView.layer.borderWidth = 1
+        
     }
-    */
-
 }
