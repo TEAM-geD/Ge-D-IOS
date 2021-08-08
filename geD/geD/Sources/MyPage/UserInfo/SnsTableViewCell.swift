@@ -11,6 +11,7 @@ class SnsTableViewCell: UITableViewCell {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var snsIconButton: UIButton!
     @IBOutlet weak var selectSnsButton: UIButton!
+    @IBOutlet weak var snsView: UIView!
     var snsName = ""
     
     override func awakeFromNib() {

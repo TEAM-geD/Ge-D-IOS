@@ -8,6 +8,7 @@
 import UIKit
 
 class UserInfoViewController: BaseViewController {
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var plannerButton: UIButton!
     @IBOutlet weak var developerButton: UIButton!
@@ -19,6 +20,7 @@ class UserInfoViewController: BaseViewController {
     @IBOutlet weak var doneView: UIView!
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     var rowCount = 1
+    var selectedSnsCellIdx = 0
     var isDeveloper = false
     var isDesigner = false
     var isPlanner = false
@@ -109,10 +111,15 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.snsTableViewCellIdentifier, for: indexPath) as! SnsTableViewCell
-        cell.selectSnsButton.tag = indexPath.row
-        cell.snsIconButton.tag = indexPath.row
-        cell.selectSnsButton.addTarget(self, action: #selector(pressSelectButton), for: .touchUpInside)
-        cell.snsIconButton.addTarget(self, action: #selector(pressSelectButton), for: .touchUpInside)
+        
+        let touchButton = UIButton()
+        touchButton.tag = indexPath.row
+        touchButton.addTarget(self, action: #selector(pressSelectButton), for: .touchUpInside)
+        cell.addSubview(touchButton)
+        touchButton.snp.makeConstraints { make in
+            make.edges.equalTo(cell.snsView.snp.edges)
+        }
+        
         if indexPath.row == 0 {
             let addButton = UIButton()
             addButton.setImage(UIImage(named: "icMyprofileAdd"), for: .normal)
@@ -142,12 +149,25 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func pressSelectButton(_ sender: UIButton) {
-        let idx = sender.tag
+        selectedSnsCellIdx = sender.tag
         let bottomVC = BottomSheetViewController()
+        bottomVC.delegate = self
         bottomVC.modalPresentationStyle = .overFullScreen
         self.present(bottomVC, animated: true, completion: nil)
     }
     
+}
+
+extension UserInfoViewController: SnsDelegate {
+    func selectSns(snsName: String, snsImageName: String) {
+        let indexPath: IndexPath = IndexPath(row: self.selectedSnsCellIdx, section: 0)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! SnsTableViewCell
+        cell.snsName = snsName
+        cell.snsIconButton.setImage(UIImage(named: snsImageName), for: .normal)
+        cell.snsIconButton.setTitle("", for: .normal)
+        tableView.reloadData()
+    }
 }
 
 extension UserInfoViewController: UITextViewDelegate {

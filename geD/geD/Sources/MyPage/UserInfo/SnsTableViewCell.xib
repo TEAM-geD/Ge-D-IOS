@@ -23,6 +23,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG0-m3-Jel">
                                 <rect key="frame" x="10" y="1.5" width="30" height="32"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="선택">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -74,6 +75,7 @@
             <connections>
                 <outlet property="selectSnsButton" destination="fdV-gI-yzo" id="4f8-vV-EcG"/>
                 <outlet property="snsIconButton" destination="rG0-m3-Jel" id="TEJ-CX-8km"/>
+                <outlet property="snsView" destination="sL4-DR-fcg" id="h3B-s2-7AG"/>
                 <outlet property="urlTextField" destination="rZG-x0-15f" id="6fy-7d-eOB"/>
             </connections>
             <point key="canvasLocation" x="19.565217391304348" y="104.79910714285714"/>

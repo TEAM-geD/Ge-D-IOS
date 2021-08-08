@@ -10,6 +10,8 @@ import UIKit
 class BottomSheetViewController: UIViewController {
     var defaultHeight: CGFloat = Device.height * 0.35
     
+    var delegate: SnsDelegate?
+    
     private let containerView: UIView = { () -> UIView in
         let containerView = UIView()
         containerView.backgroundColor = .black
@@ -122,6 +124,11 @@ class BottomSheetViewController: UIViewController {
         }
     }
     
+    @objc private func pressSnsButton(_ sender: UIButton) {
+        delegate?.selectSns(snsName: Constant.snsNameList[sender.tag], snsImageName: Constant.snsProfileImageNameList[sender.tag])
+        
+        dismissViewController()
+    }
 }
 
 extension BottomSheetViewController: UIGestureRecognizerDelegate {
@@ -139,6 +146,14 @@ extension BottomSheetViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SnsCollectionViewCell", for: indexPath) as! SnsCollectionViewCell
         cell.snsLabelButton.setTitle(Constant.snsNameList[indexPath.row], for: .normal)
         cell.snsImageButton.setImage(UIImage(named: Constant.snsImageNameList[indexPath.row]), for: .normal)
+        
+        let touchButton = UIButton()
+        touchButton.tag = indexPath.row
+        touchButton.addTarget(self, action: #selector(pressSnsButton(_:)), for: .touchUpInside)
+        cell.addSubview(touchButton)
+        touchButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         return cell
     }
