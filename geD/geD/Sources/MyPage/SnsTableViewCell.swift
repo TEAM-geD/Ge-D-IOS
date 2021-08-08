@@ -9,6 +9,9 @@ import UIKit
 
 class SnsTableViewCell: UITableViewCell {
     @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var snsIconButton: UIButton!
+    @IBOutlet weak var selectSnsButton: UIButton!
+    var snsName = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -22,4 +22,7 @@ struct Constant {
     
     static let customerServiceEmail = "butga@naver.com"
     static let snsTableViewCellIdentifier = "SnsTableViewCell"
+    
+    static let snsNameList = ["인스타그램", "페이스북", "링크드인", "브런치", "핀터레스트", "비핸스", "깃허브"]
+    static let snsImageNameList = ["icMypageInstagram", "icMypageFacebook", "icMypageLinkedin", "icMypageBrunch", "icMypagePinterest", "icMypageBehance", "icMypageGithub"]
 }

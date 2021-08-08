@@ -473,7 +473,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXn-tU-o8R" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="815"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTq-4s-5u2">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMyprofileDefalutBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WTq-4s-5u2">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="215"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="215" id="NWO-3j-B5w"/>
@@ -586,7 +586,7 @@
                                                 </constraints>
                                                 <state key="normal" image="icMyprofilePhotoEdit"/>
                                             </button>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rv1-Mg-vES">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rv1-Mg-vES">
                                                 <rect key="frame" x="0.0" y="540.5" width="414" height="47"/>
                                                 <color key="backgroundColor" name="Background Color"/>
                                                 <constraints>
@@ -625,14 +625,37 @@
                                                     <constraint firstAttribute="trailing" secondItem="Huo-gs-xKW" secondAttribute="trailing" constant="20" id="q6E-P1-5Ik"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-Ke-CoV">
+                                                <rect key="frame" x="71" y="373.5" width="64" height="27"/>
+                                                <state key="normal" image="icProjectwritePlannerGray"/>
+                                                <connections>
+                                                    <action selector="plannerButtonPressed:" destination="Ep1-ix-KV7" eventType="touchUpInside" id="zIm-cP-0uJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaA-06-O9X">
+                                                <rect key="frame" x="141" y="373.5" width="64" height="27"/>
+                                                <state key="normal" image="icProjectwriteDeveloperGray"/>
+                                                <connections>
+                                                    <action selector="developerButtonPressed:" destination="Ep1-ix-KV7" eventType="touchUpInside" id="h1C-R3-2fW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-rp-m6P">
+                                                <rect key="frame" x="211" y="373.5" width="72" height="27"/>
+                                                <state key="normal" image="icProjectwriteDesignerGray"/>
+                                                <connections>
+                                                    <action selector="designerButtonPressed:" destination="Ep1-ix-KV7" eventType="touchUpInside" id="Aet-CA-4jZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Background Color"/>
                                         <constraints>
                                             <constraint firstItem="u8z-cG-voB" firstAttribute="leading" secondItem="eyA-tz-013" secondAttribute="trailing" constant="23" id="07j-wb-g1R"/>
                                             <constraint firstItem="vr3-4e-5t1" firstAttribute="top" secondItem="tXO-tS-qkQ" secondAttribute="bottom" constant="16" id="1CJ-Ae-anh"/>
                                             <constraint firstAttribute="bottom" secondItem="Hea-RS-Okc" secondAttribute="bottom" id="1nI-LQ-5ZE"/>
+                                            <constraint firstItem="GzE-Ke-CoV" firstAttribute="leading" secondItem="tCE-gt-OcA" secondAttribute="trailing" constant="23" id="1wz-7g-RPs"/>
                                             <constraint firstItem="u8z-cG-voB" firstAttribute="centerY" secondItem="eyA-tz-013" secondAttribute="centerY" id="2gB-jp-HYU"/>
                                             <constraint firstItem="11E-4u-Lsn" firstAttribute="centerX" secondItem="tXn-tU-o8R" secondAttribute="centerX" id="53q-dO-QeB"/>
+                                            <constraint firstItem="KaA-06-O9X" firstAttribute="centerY" secondItem="GzE-Ke-CoV" secondAttribute="centerY" id="5O8-nf-8uv"/>
                                             <constraint firstAttribute="trailing" secondItem="Rv1-Mg-vES" secondAttribute="trailing" id="7Mh-AO-jMb"/>
                                             <constraint firstItem="Bgt-hd-sQ4" firstAttribute="leading" secondItem="tXn-tU-o8R" secondAttribute="leading" id="7Ol-Ir-03C"/>
                                             <constraint firstItem="tCE-gt-OcA" firstAttribute="leading" secondItem="eyA-tz-013" secondAttribute="leading" id="7p2-R6-hqr"/>
@@ -649,12 +672,15 @@
                                             <constraint firstItem="dYE-3A-3Ay" firstAttribute="top" secondItem="oKf-bu-8eB" secondAttribute="top" id="SO7-DN-Uoq"/>
                                             <constraint firstItem="eyA-tz-013" firstAttribute="leading" secondItem="zlw-sU-8ec" secondAttribute="leading" id="TMM-BB-cwa"/>
                                             <constraint firstItem="Vlb-V6-bTW" firstAttribute="leading" secondItem="tXn-tU-o8R" secondAttribute="leading" id="TkS-7x-JWZ"/>
+                                            <constraint firstItem="qh2-rp-m6P" firstAttribute="centerY" secondItem="KaA-06-O9X" secondAttribute="centerY" id="UUN-Jf-o7u"/>
+                                            <constraint firstItem="KaA-06-O9X" firstAttribute="leading" secondItem="GzE-Ke-CoV" secondAttribute="trailing" constant="6" id="Vcw-RN-fwc"/>
                                             <constraint firstAttribute="trailing" secondItem="npI-oe-JUT" secondAttribute="trailing" id="W8s-rG-1aQ"/>
                                             <constraint firstItem="11E-4u-Lsn" firstAttribute="top" secondItem="tXn-tU-o8R" secondAttribute="top" constant="155" id="WAy-pL-t2a"/>
                                             <constraint firstItem="eyA-tz-013" firstAttribute="top" secondItem="npI-oe-JUT" secondAttribute="bottom" constant="18" id="WCO-Ly-pY7"/>
                                             <constraint firstItem="tXO-tS-qkQ" firstAttribute="leading" secondItem="8ZZ-mv-kvr" secondAttribute="trailing" constant="23" id="YUa-Xt-ChZ"/>
                                             <constraint firstItem="WTq-4s-5u2" firstAttribute="leading" secondItem="tXn-tU-o8R" secondAttribute="leading" id="aBE-hk-DbU"/>
                                             <constraint firstItem="zlw-sU-8ec" firstAttribute="top" secondItem="WTq-4s-5u2" secondAttribute="bottom" constant="56" id="aYR-UU-jvZ"/>
+                                            <constraint firstItem="qh2-rp-m6P" firstAttribute="leading" secondItem="KaA-06-O9X" secondAttribute="trailing" constant="6" id="ark-82-Rvr"/>
                                             <constraint firstItem="Rv1-Mg-vES" firstAttribute="top" secondItem="7IW-l5-MoT" secondAttribute="bottom" constant="13" id="bs9-eQ-SuC"/>
                                             <constraint firstItem="Vlb-V6-bTW" firstAttribute="top" secondItem="tCE-gt-OcA" secondAttribute="bottom" constant="16" id="cQa-Fa-eCY"/>
                                             <constraint firstItem="tCE-gt-OcA" firstAttribute="top" secondItem="HHw-Ov-BNI" secondAttribute="bottom" constant="16" id="cbk-nG-Hon"/>
@@ -683,6 +709,7 @@
                                             <constraint firstAttribute="trailing" secondItem="tXO-tS-qkQ" secondAttribute="trailing" constant="20" id="ua1-gr-23i"/>
                                             <constraint firstItem="npI-oe-JUT" firstAttribute="leading" secondItem="tXn-tU-o8R" secondAttribute="leading" id="vQz-VU-Q5U"/>
                                             <constraint firstItem="oKf-bu-8eB" firstAttribute="leading" secondItem="7IW-l5-MoT" secondAttribute="leading" id="xX6-Ax-iHk"/>
+                                            <constraint firstItem="GzE-Ke-CoV" firstAttribute="centerY" secondItem="tCE-gt-OcA" secondAttribute="centerY" id="xsM-No-KkY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -709,10 +736,14 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="contentView" destination="tXn-tU-o8R" id="SI2-Pw-IA8"/>
+                        <outlet property="designerButton" destination="qh2-rp-m6P" id="pPS-cR-fI9"/>
+                        <outlet property="developerButton" destination="KaA-06-O9X" id="tUI-Ja-xgX"/>
                         <outlet property="doneView" destination="Hea-RS-Okc" id="m7h-Fe-sEK"/>
                         <outlet property="introduceTextView" destination="tXO-tS-qkQ" id="I2p-gd-7Gy"/>
+                        <outlet property="plannerButton" destination="GzE-Ke-CoV" id="MUl-hk-9gr"/>
                         <outlet property="profileImageView" destination="11E-4u-Lsn" id="Wg0-I8-hyq"/>
                         <outlet property="scrollView" destination="XEE-2M-uZG" id="iCv-8I-Von"/>
+                        <outlet property="tableHeightConstraint" destination="nu3-0L-pZ4" id="QTW-Ww-zB7"/>
                         <outlet property="tableView" destination="Rv1-Mg-vES" id="u0w-eS-wvq"/>
                     </connections>
                 </viewController>
@@ -745,13 +776,17 @@
         <image name="icMypageDefault" width="36" height="36"/>
         <image name="icMypageInfo" width="19" height="19"/>
         <image name="icMyprofilePhotoEdit" width="45" height="45"/>
+        <image name="icProjectwriteDesignerGray" width="72" height="27"/>
+        <image name="icProjectwriteDeveloperGray" width="64" height="27"/>
+        <image name="icProjectwritePlannerGray" width="64" height="27"/>
         <image name="icTabMyW" width="19" height="20.5"/>
         <image name="imgMembersProfile" width="86" height="86"/>
+        <image name="imgMyprofileDefalutBackground" width="375" height="214"/>
         <namedColor name="Background Color">
             <color red="0.16899999976158142" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="bluePurple">
-            <color red="0.30588235294117649" green="0.011764705882352941" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3059999942779541" green="0.012000000104308128" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
