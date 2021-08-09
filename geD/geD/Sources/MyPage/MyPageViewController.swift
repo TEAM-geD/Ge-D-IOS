@@ -18,28 +18,25 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var userIntroduceLabel: UILabel!
     @IBOutlet weak var noUploadProjectView: UIView!
     @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var snsCollectionView: UICollectionView!
     @IBOutlet weak var myProjectLabel: UILabel!
     @IBOutlet weak var myNoProjectView: UIView!
     @IBOutlet weak var projectSegmented: CustomSegmentedControl!
-    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var userInfoButton: UIButton!
+    
+    let dataManager = MyPageDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showIndicator()
         
-        if let accessToken = KeychainSwift().get("jwtToken"), let userIdx = KeychainSwift().get("userIdx") {
-            UserInfoDataManager().getUserInfo(accessToken, userIdx, viewController: self)
-        } else {
-            dismissIndicator()
-        }
-        
-        userNameLabel.isUserInteractionEnabled = true
-        userNameLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.moveUserInfoPage)))
+        userInfoButton.addTarget(self, action: #selector(moveUserInfoPage), for: .touchUpInside)
         
         contentView.backgroundColor = UIColor(hex: 0x2B2B2B)
         profileImageView.layer.cornerRadius = 20
         noUploadProjectView.layer.cornerRadius = 10
         myNoProjectView.layer.cornerRadius = 10
+        self.collectionViewHeightConstraint.constant = 0
         
         leftBarButtonItemLayout()
         rightBarButtonItemsLayout()
@@ -49,13 +46,24 @@ class MyPageViewController: BaseViewController {
         projectSegmented.backgroundColor = .clear
     }
     
-    func updateUI(_ userInfo: UserInfoResult) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showIndicator()
+        
+        if let jwtToken = KeychainSwift().get("jwtToken"), let userIdx = KeychainSwift().get("userIdx") {
+            dataManager.getUserInfo(jwtToken, userIdx, 3, viewController: self)
+        } else {
+            dismissIndicator()
+        }
+    }
+    
+    func updateUI(_ userInfo: MyPageResult) {
         DispatchQueue.main.async {
             self.userNameLabel.text = userInfo.userName
             if let introduce = userInfo.introduce {
                 self.userIntroduceLabel.text = introduce
             }
-            if let profileImageUrl = userInfo.profileImageUrl {
+            if let profileImageUrl = userInfo.userProfileImageUrl {
                 let downsamplingProcessor = DownsamplingImageProcessor(size: CGSize(width: 86, height: 86))
                 let roundCornerProcessor = RoundCornerImageProcessor(cornerRadius: 20)
                 self.profileImageView.kf.setImage(
@@ -69,6 +77,9 @@ class MyPageViewController: BaseViewController {
             }
             if let userJob = userInfo.userJob {
                 self.userJobLabel.text = userJob
+            }
+            if userInfo.userSnsUrlList.count > 0 {
+                self.collectionViewHeightConstraint.constant = 36
             }
         }
     }
